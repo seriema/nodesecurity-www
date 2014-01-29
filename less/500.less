@@ -1,0 +1,80 @@
+body.error500 {
+  background: #f0f0f0 url('/img/lock.png');
+  text-align: center;
+  font-size: 16px;
+
+  h1 {
+    font-size: 150px;
+    line-height: 150px;
+    &.hinge {
+      z-index: -1;
+      position: relative;
+    }
+  }
+
+  .error-msg {
+    width: 850px;
+    margin: auto;
+    text-align: left;
+    float: left;
+    z-index: 5;
+    img {
+      display: inline-block;
+      width: 70px;
+    }
+    p {
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+
+
+  overflow-y: scroll;
+}
+
+
+.animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;}
+.animated.hinge{-webkit-animation-duration:2s;-moz-animation-duration:2s;-ms-animation-duration:2s;-o-animation-duration:2s;animation-duration:2s;}
+
+@-webkit-keyframes hinge {
+  0% { -webkit-transform: rotate(0); -webkit-transform-origin: left; -webkit-animation-timing-function: ease-in-out; }
+  20% { -webkit-transform: rotate(120deg); -webkit-transform-origin: left; -webkit-animation-timing-function: ease-in-out; }
+  40% { -webkit-transform: rotate(70deg); -webkit-transform-origin: left; -webkit-animation-timing-function: ease-in-out; }
+  60% { -webkit-transform: rotate(100deg); -webkit-transform-origin: left; -webkit-animation-timing-function: ease-in-out; }
+  80% { -webkit-transform: rotate(85deg) translateY(0); -webkit-transform-origin: left; -webkit-animation-timing-function: ease-in-out; }
+  100% { -webkit-transform: rotate(90deg) translateY(0); -webkit-transform-origin: left; -webkit-animation-timing-function: ease-out; }
+}
+
+@-moz-keyframes hinge {
+  0% { -moz-transform: rotate(0); -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }
+  20% { -moz-transform: rotate(120deg); -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }
+  40% { -moz-transform: rotate(70deg); -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }
+  60% { -moz-transform: rotate(100deg); -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }
+  80% { -moz-transform: rotate(85deg) translateY(0); -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }
+  100% { -moz-transform: rotate(90deg) translateY(0); -moz-transform-origin: top left; -moz-animation-timing-function: ease-out; }
+}
+
+@-o-keyframes hinge {
+  0% { -o-transform: rotate(0); -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }
+  20% { -o-transform: rotate(120deg); -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }
+  40% { -o-transform: rotate(70deg); -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }
+  60% { -o-transform: rotate(100deg); -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }
+  80% { -o-transform: rotate(85deg) translateY(0); -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }
+  100% { -o-transform: rotate(90deg) translateY(0); -o-transform-origin: top left; -o-animation-timing-function: ease-out; }
+}
+
+@keyframes hinge {
+  0% { transform: rotate(0); transform-origin: top left; animation-timing-function: ease-in-out; }
+  20% { transform: rotate(120deg); transform-origin: top left; animation-timing-function: ease-in-out; }
+  40% { transform: rotate(70deg); transform-origin: top left; animation-timing-function: ease-in-out; }
+  60% { transform: rotate(100deg); transform-origin: top left; animation-timing-function: ease-in-out; }
+  80% { transform: rotate(85deg) translateY(0); transform-origin: top left; animation-timing-function: ease-in-out; }
+  100% { transform: rotate(90deg) translateY(0); transform-origin: top left; animation-timing-function: ease-out; }
+}
+
+.hinge {
+  -webkit-animation-name: hinge;
+  -moz-animation-name: hinge;
+  -o-animation-name: hinge;
+  animation-name: hinge;
+}

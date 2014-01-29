@@ -1,0 +1,11 @@
+extends layout
+
+
+block content
+  h2 Security advisories
+  ul
+    - each key in Object.keys(meta).sort()
+        //- h2= key
+        li 
+          a(href='/advisories/#{meta[key].url}')= meta[key].title
+

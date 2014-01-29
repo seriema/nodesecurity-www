@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .wrap
+    header
+      h1#logo Lift Security from &yet
+      nav
+        a(href="/") home
+        a(href="http://blog.liftsecurity.io") blog
+        a.active(href="/advisories") advisories
+        a(href="mailto:contact@liftsecurity.io") contact
+        a(href="http://twitter.com/liftsecurity", data-icon="t")
+    section.clearfix
+      article!= meta.html
+

@@ -4,7 +4,8 @@
   "description": "Node Security Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,12 @@
   },
   "homepage": "https://github.com/nodesecurity/nodesecurity-www",
   "dependencies": {
-    "hapi": "~2.1.1"
+    "hapi": "~2.1.1",
+    "jade": "~1.1.5",
+    "bucker": "~1.0.3",
+    "config": "~0.4.35",
+    "moonboots_hapi": "~1.3.1",
+    "postmark": "~0.2.0"
   },
   "devDependencies": {
     "precommit-hook": "~0.3.8"

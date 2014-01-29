@@ -1,0 +1,61 @@
+
+
+body.advisories .menu .nav li:nth-child(1),
+body.users .menu .nav li:nth-child(3),
+body.report .menu .nav li:nth-child(2),
+body.admin .menu .nav li:last-child,
+body.login .menu .nav li:last-child,
+{
+  a { color: @darkGrey; }
+  &:after{
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #e0e1db;
+    margin: -10px auto 0 auto;
+  }
+}
+
+header {
+  .span6 {
+    margin-left: 0;
+  }
+  .social img {
+    width: 32px;
+    margin-left: 1em;
+  }
+}
+
+.menu.navbar {
+  background: #fff;
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 0;
+
+  li {
+    margin-left: 3em;
+    line-height:50px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      float: right;
+    }
+  }
+
+  ul.nav {
+    width: 100%;
+  }
+
+  .nav > li > a {
+    padding: 10px 0;
+    color: @lightGrey;
+    &:hover {
+      color: @grey;
+    }
+  }
+}
+
