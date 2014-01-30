@@ -13,13 +13,11 @@ block content
                 div.advisory-title: a(href='/advisories/#{advisory.meta.url}') #{advisory.meta.title}
                 div.advisory-date
                   i.icon-calendar
-                  //- | #{moment(advisory.created).format(' MMMM Do, YYYY')}
                   | #{advisory.meta.publish_date}
               .span3.advisory-right
                 div.module-name: a(href='/package/#{advisory.meta.module_name}') #{advisory.meta.module_name}
-                //- div.module-version Vulnerable: #{advisory.meta.vulnerable.join('.')}
-                div.module-version Vulnerable: 
-                div.module-version Patched:
+                div.module-version Vulnerable: #{advisory.meta.vulnerable_versions}
+                div.module-version Patched: #{advisory.meta.patched_versions}
 
 
 
