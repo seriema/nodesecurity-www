@@ -1,6 +1,6 @@
 var Hapi = require('hapi');
 var config = require('config');
-var advisories = require('hapi-advisories');
+var advisories = require('./hapi-advisories');
 
 // Create a server with a host and port
 var server = Hapi.createServer(config.hapi.host, config.hapi.port, config.hapi.options);

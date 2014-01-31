@@ -1,0 +1,148 @@
+var Hapi = require('hapi');
+var advisories = require('../hapi-advisories');
+var server = new Hapi.Server();
+var valid_no_vulns = require('./data/valid_no_vulns.json');
+var valid_vulns = require('./data/valid_vulns.json');
+var invalid_1 = require('./data/invalid_1.json');
+var invalid_2 = require('./data/invalid_2.json');
+var invalid_3 = require('./data/invalid_3.json');
+
+exports['register plugin'] = function (test) {
+    server.pack.register(advisories, {views: '../views'}, function (err) {
+        test.ifError(err);
+        test.done();
+    });
+};
+
+exports['valid payload - no vulns'] = function (test) {
+    server.inject({
+        method: 'POST',
+        url: '/validate/shrinkwrap',
+        payload: valid_no_vulns
+    }, function (res) {
+        var payload;
+        test.equal(res.statusCode, '200', 'should return a 200');
+        test.doesNotThrow(function () {payload = JSON.parse(res.payload); });
+        test.equal(res.payload, '[]', 'should return no results');
+        test.done();
+    });
+};
+
+exports['valid payload - vulns'] = function (test) {
+    server.inject({
+        method: 'POST',
+        url: '/validate/shrinkwrap',
+        payload: valid_vulns
+
+    }, function (res) {
+        var payload;
+        test.equal(res.statusCode, '200', 'should return a 200');
+        test.doesNotThrow(function () {payload = JSON.parse(res.payload); });
+        test.equal(payload.length, 2);
+        test.ok(payload[0].module, 'should have a module key');
+        test.ok(payload[0].version, 'should have a version key');
+        test.ok(payload[0].advisory, 'show have an advisory key');
+        test.done();
+    });
+};
+
+exports['invalid payload: no name, empty dependencies'] = function (test) {
+    // No name
+    // empty dependencies
+
+    server.inject({
+        method: 'POST',
+        url: '/validate/shrinkwrap',
+        payload: invalid_1
+    }, function (res) {
+        var payload;
+        test.equal(res.statusCode, '200', 'should return a 200');
+        test.doesNotThrow(function () {payload = JSON.parse(res.payload); });
+        test.equal(res.payload, '[]', 'should return no results');
+        test.done();
+    });
+};
+
+exports['invalid payload: vuln module, no version'] = function (test) {
+
+    server.inject({
+        method: 'POST',
+        url: '/validate/shrinkwrap',
+        payload: invalid_2
+    }, function (res) {
+        var payload;
+        test.equal(res.statusCode, '200', 'should return a 200');
+        test.doesNotThrow(function () {payload = JSON.parse(res.payload); });
+        test.equal(res.payload, '[]', 'should return no results');
+        test.done();
+    });
+};
+
+exports['invalid payload: vuln module, invalid version'] = function (test) {
+    server.inject({
+        method: 'POST',
+        url: '/validate/shrinkwrap',
+        payload: invalid_3
+    }, function (res) {
+        var payload;
+        test.equal(res.statusCode, '200', 'should return a 200');
+        test.doesNotThrow(function () {payload = JSON.parse(res.payload); });
+        test.equal(res.payload, '[]', 'should return no results');
+        test.done();
+    });
+};
+
+exports['non existent module'] = function (test) {
+    server.inject({
+        method: 'GET',
+        url: '/validate/herpmcderp/1.2.1'
+    }, function (res) {
+        var payload;
+        test.equal(res.statusCode, '200', 'should return a 200');
+        test.doesNotThrow(function () {payload = JSON.parse(res.payload); });
+        test.equal(res.payload, '[]', 'should return no results');
+        test.done();
+    });
+};
+
+exports['existing module wrong version'] = function (test) {
+    server.inject({
+        method: 'GET',
+        url: '/validate/tomato/1.2.1'
+    }, function (res) {
+        var payload;
+        test.equal(res.statusCode, '200', 'should return a 200');
+        test.doesNotThrow(function () {payload = JSON.parse(res.payload); });
+        test.equal(res.payload, '[]', 'should return no results');
+        test.done();
+    });
+};
+
+
+exports['existing module invalid version'] = function (test) {
+    server.inject({
+        method: 'GET',
+        url: '/validate/tomato/1.'
+    }, function (res) {
+        var payload;
+        test.equal(res.statusCode, '200', 'should return a 200');
+        test.doesNotThrow(function () {payload = JSON.parse(res.payload); });
+        test.equal(res.payload, '[]', 'should return no results');
+        test.done();
+    });
+};
+
+
+exports['existing module vuln version'] = function (test) {
+    server.inject({
+        method: 'GET',
+        url: '/validate/tomato/0.0.1'
+    }, function (res) {
+        var payload;
+        test.equal(res.statusCode, '200', 'should return a 200');
+        test.doesNotThrow(function () {payload = JSON.parse(res.payload); });
+        test.equal(payload.length, 1);
+        test.done();
+    });
+};
+
