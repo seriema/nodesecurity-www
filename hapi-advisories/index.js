@@ -43,6 +43,7 @@ exports.register = function (plugin, options, next) {
     var toc = {};
     var module_index = {};
     var advisories = {};
+    var advisories_templates = {};
     var advisories_html;
     var previousDate = 0;
     var latest;
@@ -87,6 +88,8 @@ exports.register = function (plugin, options, next) {
                     toc[year].push(meta);
                 }
                 advisories[meta.meta.url] = meta;
+                plugin.log(['debug', 'hapi-advisories', 'jade'], 'rendering jade for: ' + settings.views + '/advisory.jade, ' + meta.meta.url);
+                advisories_templates[meta.meta.url] = jade.renderFile(settings.views + '/advisory.jade', {advisory: advisories[meta.meta.url]});
 
                 // Setup module_index index o_O
                 if (!module_index[meta.meta.module_name]) {
@@ -117,8 +120,8 @@ exports.register = function (plugin, options, next) {
 
     // Individual advisory handler
     plugin.route({ method: 'GET', path: '/advisories/{advisory}', handler: function (request, reply) {
-        if (advisories[request.params.advisory]) {
-            return reply.view('advisory', {advisory: advisories[request.params.advisory]});
+        if (advisories_templates[request.params.advisory]) {
+            return reply(advisories_templates[request.params.advisory]);
         } 
         return reply(Hapi.boom.notFound());
             
