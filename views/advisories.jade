@@ -15,7 +15,7 @@ block content
                   i.icon-calendar
                   | #{advisory.meta.publish_date}
               .span3.advisory-right
-                div.module-name: a(href='/package/#{advisory.meta.module_name}') #{advisory.meta.module_name}
+                div.module-name: a(href='/advisories/module/#{advisory.meta.module_name}') #{advisory.meta.module_name}
                 div.module-version Vulnerable: #{advisory.meta.vulnerable_versions}
                 div.module-version Patched: #{advisory.meta.patched_versions}
 
