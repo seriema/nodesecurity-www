@@ -129,7 +129,7 @@ exports.register = function (plugin, options, next) {
 
     plugin.route({ method: 'GET', path: '/advisories/module/{module_name}', handler: function (request, reply) {
         if (module_index[request.params.module_name]) {
-            return reply.view('module_advisory_list', {meta: module_index[request.params.module_name]});
+            return reply.view('module_advisory_list', {index: module_index[request.params.module_name]});
         }
 
         return reply(Hapi.boom.notFound());
