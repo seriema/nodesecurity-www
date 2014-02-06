@@ -23,7 +23,7 @@ function validate(pkginfo, moduleIndex, result) {
     }
 
     if (pkginfo && pkginfo.dependencies) {
-        var temp = pkginfo.parent || [];
+        var temp = pkginfo.parent.slice() || [];
         temp.push(pkginfo.name);
         Object.keys(pkginfo.dependencies).forEach(function (pkg) {
             pkginfo.dependencies[pkg].parent = temp;
