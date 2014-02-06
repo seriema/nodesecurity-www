@@ -2,7 +2,9 @@ var semver = require('semver');
 
 function validate(pkginfo, moduleIndex, result) {
     result = result || [];
-    var moduleParent = pkginfo.name;
+
+    pkginfo.parent = pkginfo.parent || [];
+    var moduleParent = pkginfo.parent;
 
     // Check for advisory here
     if (moduleIndex[pkginfo.name]) {
@@ -21,8 +23,10 @@ function validate(pkginfo, moduleIndex, result) {
     }
 
     if (pkginfo && pkginfo.dependencies) {
+        var temp = pkginfo.parent || [];
+        temp.push(pkginfo.name);
         Object.keys(pkginfo.dependencies).forEach(function (pkg) {
-            pkginfo.dependencies[pkg].parent = moduleParent;
+            pkginfo.dependencies[pkg].parent = temp;
             pkginfo.dependencies[pkg].name = pkg;
             validate(pkginfo.dependencies[pkg], moduleIndex, result);
         });

@@ -6,6 +6,7 @@ var valid_vulns = require('./data/valid_vulns.json');
 var invalid_1 = require('./data/invalid_1.json');
 var invalid_2 = require('./data/invalid_2.json');
 var invalid_3 = require('./data/invalid_3.json');
+var valid_nested = require('./data/valid_vulns_nested.json');
 
 exports['register plugin'] = function (test) {
     server.pack.register(advisories, {views: '../views'}, function (err) {
@@ -142,6 +143,25 @@ exports['existing module vuln version'] = function (test) {
         test.equal(res.statusCode, '200', 'should return a 200');
         test.doesNotThrow(function () {payload = JSON.parse(res.payload); });
         test.equal(payload.length, 1);
+        test.done();
+    });
+};
+
+exports['Dependency Tree'] = function (test) {
+    server.inject({
+        method: 'POST',
+        url: '/validate/shrinkwrap',
+        payload: valid_nested
+
+    }, function (res) {
+        var payload;
+        test.equal(res.statusCode, '200', 'should return a 200');
+        test.doesNotThrow(function () {payload = JSON.parse(res.payload); });
+        test.equal(payload.length, 1);
+        test.ok(payload[0].module, 'should have a module key');
+        test.ok(payload[0].version, 'should have a version key');
+        test.ok(payload[0].advisory, 'should have an advisory key');
+        test.deepEqual(payload[0].dependencyOf, ['root', 'second'], 'should have second and root as parents');
         test.done();
     });
 };
