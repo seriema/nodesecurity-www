@@ -1,13 +1,14 @@
-var Hapi        = null; // Initialized during plugin registration
-var walk        = require('walk');
-var fs          = require('fs');
-var metamarked  = require('meta-marked');
-var path        = require('path');
-var semver      = require('semver');
-var jade        = require('jade');
-var RSS         = require('rss');
-var rss_config  = require('config').rss;
-
+var Hapi = null; // Initialized during plugin registration
+var walk = require('walk');
+var fs = require('fs');
+var metamarked = require('meta-marked');
+var path = require('path');
+var semver = require('semver');
+var jade = require('jade');
+var RSS = require('rss');
+var config = require('config');
+var rss_config = config.rss;
+var rss_base_url = config.rss_base_url;
 
 var validate = require('./validate');
 
@@ -42,6 +43,7 @@ exports.register = function (plugin, options, next) {
     var advisories = {};
     var advisories_templates = {};
     var advisories_html;
+    // Uncomment this to work well (solution till fix the config module)
     // rss_config.pubDate = new Date().toString();
     var advisories_rss_feed = new RSS(rss_config);
     var advisories_rss_xml;
@@ -93,7 +95,7 @@ exports.register = function (plugin, options, next) {
                 advisories_rss_feed.item({
                     title:  meta.meta.title,
                     description: meta.html,
-                    url: 'https://nodesecurity.io/advisories/' + meta.meta.url,
+                    url: rss_base_url + meta.meta.url,
                     author: meta.meta.author,
                     date: meta.meta.publish_date,
                 });

@@ -26,5 +26,6 @@
     "language": "en",
     "pubDate": "",
     "ttl": "20"
-    }
+    },
+  "rss_base_url": "https://nodesecurity.io/advisories/"  
 }
