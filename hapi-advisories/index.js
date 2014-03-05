@@ -44,7 +44,7 @@ exports.register = function (plugin, options, next) {
     var advisories_templates = {};
     var advisories_html;
     // Uncomment this to work well (solution till fix the config module)
-    // rss_config.pubDate = new Date().toString();
+    rss_config.pubDate = new Date().toString();
     var advisories_rss_feed = new RSS(rss_config);
     var advisories_rss_xml;
     var previousDate = 0;
