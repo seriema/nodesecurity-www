@@ -4,7 +4,7 @@
   "description": "Node Security Project",
   "main": "index.js",
   "scripts": {
-    "test": "cd tests; nodeunit server.js",
+    "test": "cd tests; ../node_modules/.bin/nodeunit server.js",
     "start": "node server.js"
   },
   "repository": {

@@ -147,7 +147,7 @@ exports.register = function (plugin, options, next) {
     }});
 
 
-    plugin.route({ method: 'GET', path: '/rss.xml', handler: function (request, reply){
+    plugin.route({ method: 'GET', path: '/rss.xml', handler: function (request, reply) {
         return reply(advisories_rss_xml);
     }});
 
