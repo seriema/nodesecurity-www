@@ -25,13 +25,6 @@ internals.defaults = {
     }
 };
 
-// never used
-// var makePrettyFilename = function (filename) {
-//     var re1 = /[_-]/g;
-//     var escape_map = {'_': ' ', '-': ' '};
-//     return filename.replace(re1, function (c) { return escape_map[c]; });
-// };
-
 exports.register = function (plugin, options, next) {
     plugin.log(['info', 'hapi-advisories'], 'hapi-advisories plugin registered');
 
