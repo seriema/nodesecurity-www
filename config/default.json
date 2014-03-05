@@ -13,5 +13,19 @@
       "color": "false"
     },
     "app": "logs/app"
-  }
+  },
+  "rss": {
+    "title": "Node Security Advisories",
+    "description": "description",
+    "feed_url": "https://nodesecurity.io/rss.xml",
+    "site_url": "https://nodesecurity.io",
+    "image_url": "https://nodesecurity.io/img/nodesecurity.png",
+    "author": "Node Security Team contact@liftsecurity.io",
+    "managingEditor": "Node Security Team contact@liftsecurity.io",
+    "webMaster": "Node Security Team contact@liftsecurity.io",
+    "language": "en",
+    "pubDate": "",
+    "ttl": "20"
+    },
+  "rss_base_url": "https://nodesecurity.io/advisories/"  
 }

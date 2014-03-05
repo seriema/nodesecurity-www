@@ -1,5 +1,6 @@
 var Hapi = require('hapi');
 var advisories = require('../hapi-advisories');
+var config = require('config');
 var server = new Hapi.Server();
 var valid_no_vulns = require('./data/valid_no_vulns.json');
 var valid_vulns = require('./data/valid_vulns.json');
