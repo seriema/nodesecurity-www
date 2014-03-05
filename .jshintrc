@@ -2,6 +2,7 @@
     "asi": false,
     "expr": true,
     "loopfunc": true,
+    "quotmark": true,
     "curly": false,
     "evil": true,
     "white": true,

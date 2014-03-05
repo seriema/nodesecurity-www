@@ -6,7 +6,8 @@ var path        = require('path');
 var semver      = require('semver');
 var jade        = require('jade');
 var RSS         = require('rss');
-var rss_config  = require('./_rss-config.js');
+var rss_config  = require('config').rss;
+
 
 var validate = require('./validate');
 
@@ -48,6 +49,7 @@ exports.register = function (plugin, options, next) {
     var advisories = {};
     var advisories_templates = {};
     var advisories_html;
+    // rss_config.pubDate = new Date().toString();
     var advisories_rss_feed = new RSS(rss_config);
     var advisories_rss_xml;
     var previousDate = 0;
