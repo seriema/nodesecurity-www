@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/nodesecurity/nodesecurity-www",
   "dependencies": {
-    "hapi": "2.6.0",
+    "hapi": "3.0.0",
     "bucker": "~1.0.3",
     "config": "~0.4.35",
     "postmark": "~0.2.0",
