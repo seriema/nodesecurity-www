@@ -67,6 +67,11 @@ exports.register = function (plugin, options, next) {
                 var meta = metamarked(fs.readFileSync(path.resolve(settings.rootDir, fileStats.name), 'utf8'));
                 meta.meta.url = filename;
 
+                // console.log('META: ', meta.meta);
+                // console.log('parse:', JSON.parse(meta.meta.cve));
+                meta.meta.cves = JSON.parse(meta.meta.cves);
+
+
                 var currentDate;
                 if (meta.meta.publish_date) {
                     currentDate = new Date(meta.meta.publish_date);

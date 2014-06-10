@@ -10,9 +10,16 @@ block content
               h1= advisory.meta.title
             i.icon-calendar
             | #{advisory.meta.publish_date}
+            if advisory.meta.cves
+              .advisory-author
+                each cve in advisory.meta.cves
+                  i.icon-tag
+                  |  <a href="#{cve.link}">#{cve.name}</a>&nbsp;
+                #{advisory.meta.cve} 
             .advisory-author
               i.icon-user
               | &nbsp;Credit: #{advisory.meta.author}
+             
 
           .span4.advisory-right
             .module-name

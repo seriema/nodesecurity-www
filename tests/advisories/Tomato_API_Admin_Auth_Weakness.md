@@ -3,7 +3,7 @@ title:  Tomato API Admin Auth Weakness
 author:  Adam Baldwin
 module_name: tomato
 publish_date: 2013-03-07T21:52:30.192Z
-cve: CVE-temp
+cves: "[]"
 vulnerable_versions: "<= 0.0.5"
 patched_versions: ">= 0.0.6"
 ...

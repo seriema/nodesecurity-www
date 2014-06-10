@@ -712,3 +712,5 @@ body.error500 .error-msg p {
   -o-animation-name: hinge;
   animation-name: hinge;
 }
+
+.advisory-detail a { color: #666; }

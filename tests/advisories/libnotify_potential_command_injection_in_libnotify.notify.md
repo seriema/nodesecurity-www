@@ -3,7 +3,7 @@ title:  Potential command injection in libnotify.notify
 author:  Adam Baldwin
 module_name: libnotify
 publish_date: 2013-05-15T22:30:05.853Z
-cve: CVE-temp
+cves: "[]"
 vulnerable_versions: "<= 1.0.3"
 patched_versions: ">= 1.0.4"
 ...

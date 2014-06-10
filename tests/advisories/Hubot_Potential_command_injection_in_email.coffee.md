@@ -3,7 +3,7 @@ title:  Hubot Scripts Potential command injection in email.coffee
 author:  Neal Poole
 module_name: hubot-scripts
 publish_date: 2013-05-15T22:14:38.178Z
-cve: CVE-temp 
+cves: "[]"
 vulnerable_versions: "<= 2.4.3"
 patched_versions: "> 2.4.3"
 severity: high
