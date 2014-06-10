@@ -13,7 +13,7 @@ block content
             if advisory.meta.cves
               .advisory-author
                 each cve in advisory.meta.cves
-                  .i.icon-tag
+                  i.icon-tag
                   |  <a href="#{cve.link}">#{cve.name}</a>&nbsp;
                 #{advisory.meta.cve} 
             .advisory-author
