@@ -3,7 +3,7 @@ title:  printer potential command injection on untrusted input
 author:  Adam Baldwin
 module_name: printer
 publish_date: Tue Mar 06 2014 09:33:48 GMT-0800 (PST) 
-cve: CVE-temp
+cves: "[]"
 vulnerable_versions: "<= 0.0.1"
 patched_versions: "> 0.0.1"
 ...

@@ -3,7 +3,7 @@ title:  st directory traversal
 author:  Isaac Schlueter
 module_name: st
 publish_date: Feb 06 2014 09:33:48 GMT-0800 (PST) 
-cve: CVE-temp
+cves: "[]"
 vulnerable_versions: "<0.2.5"
 patched_versions: ">=0.2.5"
 ...

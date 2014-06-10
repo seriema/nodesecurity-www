@@ -48,7 +48,7 @@ server.pack.register(advisories, {}, function (err) {
         console.log('Loaded advisories');
         // Start the server
         server.start(function () {
-            console.log('Started Server');
+            console.log('Started Server on port: ', config.hapi.port);
         });
     }
 });

@@ -3,7 +3,7 @@ title:  libyaml - heap-based buffer overflow when parsing YAML tags
 author:  N/A
 module_name: libyaml
 publish_date: Tue Feb 04 2014 09:31:34 GMT-0800 (PST
-cve: CVE-2013-6393
+cves: "[{\"name\":\"CVE-2013-6393\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6393\"}]"
 vulnerable_versions: "<0.2.3"
 patched_versions: ">=0.2.3"
 ...

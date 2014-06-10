@@ -3,7 +3,7 @@ title:  methodOverride Middleware Reflected Cross-Site Scripting
 author:  Sergio Arcos
 module_name: connect
 publish_date: 2013-07-01T01:08:59.630Z
-cve: CVE-temp
+cves: "[]"
 vulnerable_versions: "<=2.8.0"
 patched_versions: ">=2.8.1"
 ...

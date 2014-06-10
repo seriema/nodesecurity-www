@@ -2,10 +2,14 @@
 title:  Template
 author:  Joe McPwnerson
 module_name: tomato
-publish_date: 
-cve: CVE-temp
+publish_date: Tue Feb 04 2014 09:33:48 GMT-0800 (PST) 
+cve: "[]"
 vulnerable_versions: ""
 patched_versions: ""
 ...
 
+## Overview
 
+## Recommendations
+
+## References

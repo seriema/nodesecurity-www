@@ -3,7 +3,7 @@ title:  codem-transcode potential command injection in ffprobe functionality
 author:  Neal Poole
 module_name: codem-transcode
 publish_date: Jul 07 2013 09:33:48 GMT-0800 (PST) 
-cve: CVE-temp
+cves: "[]"
 vulnerable_versions: "<0.5.0"
 patched_versions: ">=0.5.0"
 ...

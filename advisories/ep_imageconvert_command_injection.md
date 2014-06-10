@@ -3,7 +3,7 @@ title: ep_imageconvert unauthenticated remote command injection
 author:  Neal Poole
 module_name: ep_imageconvert
 publish_date: May 06 2013 09:33:48 GMT-0800 (PST) 
-cve: CVE-2013-3364
+cves: "[{\"name\":\"CVE-2013-3364\",\"link\":\"http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2013-3364\"}]"
 vulnerable_versions: "<=0.0.2"
 patched_versions: ">=0.0.3"
 ...
