@@ -3,7 +3,7 @@ title:  Yar Denial-of-Service
 author:  Reid Burke
 module_name: yar
 publish_date: Mon Jun 16 2014 12:29:10 GMT-0700 (PDT)
-cve: "[]"
+cves: "[]"
 vulnerable_versions: "<2.2.0"
 patched_versions: ">=2.2.0"
 ...
