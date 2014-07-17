@@ -22,15 +22,16 @@
   },
   "homepage": "https://github.com/nodesecurity/nodesecurity-www",
   "dependencies": {
-    "hapi": "3.0.0",
     "bucker": "~1.0.3",
     "config": "~0.4.35",
-    "postmark": "~0.2.0",
-    "walk": "~2.3.1",
-    "semver": "~2.2.1",
-    "rss": "^0.3.2",
+    "hapi": "6.2.0",
+    "hoek": "^2.3.0",
+    "jade": "^1.4.2",
     "meta-marked": "^0.3.1",
-    "jade": "^1.3.0"
+    "postmark": "~0.2.0",
+    "rss": "^0.3.2",
+    "semver": "^2.2.1",
+    "walk": "~2.3.1"
   },
   "devDependencies": {
     "precommit-hook": "~0.3.8",

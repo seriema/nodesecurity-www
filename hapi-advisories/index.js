@@ -7,13 +7,11 @@ var semver = require('semver');
 var jade = require('jade');
 var RSS = require('rss');
 var config = require('config');
+var hoek = require('hoek');
 var rss_config = config.rss;
 var rss_base_url = config.rss_base_url;
 
 var validate = require('./validate');
-
-exports.name    = 'advisories';
-exports.version = '1.0.0';
 
 var internals = {};
 
@@ -30,11 +28,10 @@ exports.register = function (plugin, options, next) {
     plugin.log(['info', 'hapi-advisories'], 'hapi-advisories plugin registered');
 
     internals.setHapi(plugin.hapi);
-    var Utils = plugin.hapi.utils;
-    var settings = Utils.applyToDefaults(internals.defaults, options);
+    var settings = hoek.applyToDefaults(internals.defaults, options);
 
     plugin.views({
-        engines: { jade: 'jade' },
+        engines: { jade: jade },
         path: settings.views
     });
 
@@ -186,6 +183,11 @@ exports.register = function (plugin, options, next) {
         }
     });
 
+};
+
+exports.register.attributes = {
+    name: 'advisories',
+    version: '1.0.0'
 };
 
 
