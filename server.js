@@ -1,18 +1,20 @@
 var Hapi = require('hapi');
 var config = require('config');
+var jade = require('jade');
+var bucker = require('bucker');
 var advisories = require('./hapi-advisories');
 
 // Create a server with a host and port
 var server = Hapi.createServer(config.hapi.host, config.hapi.port, config.hapi.options);
 
-server.pack.require('bucker', config.bucker, function (err) {
+server.pack.register({plugin: bucker, options: config.bucker}, function (err) {
     if (err) console.error('failed loading bucker plugin');
 });
 
 
 server.views({
     engines: {
-        jade: 'jade',
+        jade: jade,
     },
     path: './views'
 });

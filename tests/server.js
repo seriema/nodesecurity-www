@@ -10,7 +10,7 @@ var invalid_3 = require('./data/invalid_3.json');
 var valid_nested = require('./data/valid_vulns_nested.json');
 
 exports['register plugin'] = function (test) {
-    server.pack.register(advisories, {views: '../views'}, function (err) {
+    server.pack.register({plugin: advisories, options: {views: '../views'}}, function (err) {
         test.ifError(err);
         test.done();
     });
