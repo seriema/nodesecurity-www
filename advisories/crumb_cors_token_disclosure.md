@@ -1,7 +1,7 @@
 ---
 title:  Crumb CORS Token Disclosure
-author:  Markus Stong
-module_name: yar
+author:  Marcus Stong
+module_name: crumb
 publish_date: Mon Aug 1 2014 09:40:57 GMT-0700 (PST)
 cves: "[]"
 vulnerable_versions: "<3.0.0"
