@@ -1,0 +1,20 @@
+---
+title:  Crumb CORS Token Disclosure
+author:  Markus Stong
+module_name: yar
+publish_date: Mon Aug 1 2014 09:40:57 GMT-0700 (PST)
+cves: "[]"
+vulnerable_versions: "<3.0.0"
+patched_versions: ">=3.0.0"
+...
+
+## Overview
+When CORS is enabled on a Hapi route handler, it is possible to set a CRUMB token for a different domain. An attacker would need to have an application consumer visit a site they control, request a route supporting CORS, and then retrieve the token. With this token, they could possibly make requests to non CORS routes as this user.
+
+A configuration and scenario where this would occur is unlikely, as most configurations will set CORS globally (where crumb is not used), or not at all.
+
+## Recommendations
+Update to a version 3.0.0 or greater.
+
+## References
+- https://github.com/spumko/crumb/commit/5e6d4f5c81677fe9e362837ffd4a02394303db3c
