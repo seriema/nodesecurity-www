@@ -4,7 +4,7 @@ author: Tom Steele
 module_name: qs
 publish_date: Aug 6 2014 09:10:22 GMT-0800 (PST) 
 cves: "[]"
-vulnerable_versions: "< 1.x"
+vulnerable_versions: "<1.0.0"
 patched_versions: ">= 1.x"
 ...
 
