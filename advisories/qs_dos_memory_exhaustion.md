@@ -9,7 +9,7 @@ patched_versions: ">= 1.x"
 ...
 
 ## Overview
-The qs module has the ability to create sparse arrays during parsing. By specifying a high index it is possible to create a large array that will eventually take up all the allocated memory or the running process, resulting in a crash.
+The qs module has the ability to create sparse arrays during parsing. By specifying a high index it is possible to create a large array that will eventually take up all the allocated memory of the running process, resulting in a crash.
 
 ## Recommendations
 Update qs to version 1.0.0 or greater
