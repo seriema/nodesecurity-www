@@ -1,21 +1,23 @@
 doctype html
 html
-	head
-		title Node Security Project | #{title}
-		meta(name='viewport', content='width=device-width,initial-scale=1.0')
-		link(rel='stylesheet', href='/css/bootstrap.css')
-		//- link(rel='stylesheet', href='/css/bootstrap-responsive.css')
-		link(rel='stylesheet', href='/css/app.css')
-		link(rel="alternate" type="application/rss+xml" title="Node Security Advisories" href="/rss.xml")
-		link(href='https://fonts.googleapis.com/css?family=Lato:400,900', rel='stylesheet', type='text/css')
-		link(rel='icon', href='/img/nodesecurity.png')
+    head
+        title Node Security Project | #{title}
+        meta(name='viewport', content='width=device-width,initial-scale=1.0')
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        //- link(rel='stylesheet', href='/css/bootstrap-responsive.css')
+        link(rel='stylesheet', href='/css/app.css')
+        link(rel="alternate" type="application/rss+xml" title="Node Security Advisories" href="/rss.xml")
+        link(href='https://fonts.googleapis.com/css?family=Lato:400,900', rel='stylesheet', type='text/css')
+        link(rel='icon', href='/img/nodesecurity.png')
 
-		script(type='text/javascript', src='/js/jquery.min.js')
-		script(type='text/javascript', src='/js/bootstrap.min.js')
+        script(type='text/javascript', src='/js/jquery.min.js')
+        script(type='text/javascript', src='/js/bootstrap.min.js')
 
 
-	body(class=bodyClasses)
-		include menu/top
-		block content
+    body(class=bodyClasses)
+        include menu/top
+        block content
 
-		include menu/bottom
+        script(src='/js/gs.js')
+
+        include menu/bottom
