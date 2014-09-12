@@ -4,8 +4,8 @@ author: Paweł Hałdrzyński
 module_name: express
 publish_date: Fri Sep 12 2014 07:46:45 GMT-0700 (PDT)
 cves: "[]"
-vulnerable_versions: "< 3.8.0, < 4.3.0"
-patched_versions: ">= 3.8.0, >= 4.3.0"
+vulnerable_versions: "< 3.11.0, < 4.5.0"
+patched_versions: ">= 3.11.0, >= 4.5.0"
 ---
 
 ## Overview
