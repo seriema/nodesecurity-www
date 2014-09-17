@@ -3,7 +3,7 @@ title: express No Charset in Content-Type Header
 author: Paweł Hałdrzyński
 module_name: express
 publish_date: Fri Sep 12 2014 07:46:45 GMT-0700 (PDT)
-cves: "[]"
+cves: "[{\"name\":\"CVE-2014-6393\",\"link\":\"https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6393\"}]"
 vulnerable_versions: "< 3.11.0, < 4.5.0"
 patched_versions: ">= 3.11.0, >= 4.5.0"
 ---
