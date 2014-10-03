@@ -12,11 +12,14 @@ block content
             | #{advisory.meta.publish_date}
             if advisory.meta.cves
               .advisory-author
-                each cve in advisory.meta.cves
+                if advisory.meta.cves.length > 0
+                  each cve in advisory.meta.cves
+                    i.icon-tag
+                    |  <a href="#{cve.link}">#{cve.name}</a>&nbsp;
+                  #{advisory.meta.cve} 
+                else
                   i.icon-tag
-                  |  <a href="#{cve.link}">#{cve.name}</a>&nbsp;
-                #{advisory.meta.cve} 
-            .advisory-author
+                  | CVE-PENDING
               i.icon-user
               | &nbsp;Credit: #{advisory.meta.author}
              
