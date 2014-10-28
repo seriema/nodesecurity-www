@@ -23,7 +23,7 @@
   "homepage": "https://github.com/nodesecurity/nodesecurity-www",
   "dependencies": {
     "bucker": "~1.0.10",
-    "config": "^0.4.37",
+    "config": "^1.6.0",
     "hapi": "^7.1.1",
     "hoek": "^2.4.1",
     "jade": "^1.4.2",
