@@ -16,8 +16,15 @@ block content
                   | #{advisory.meta.publish_date}
               .span3.advisory-right
                 div.module-name: a(href='/advisories/module/#{advisory.meta.module_name}') #{advisory.meta.module_name}
-                div.module-version Vulnerable: #{advisory.meta.vulnerable_versions}
-                div.module-version Patched: #{advisory.meta.patched_versions}
+                if advisory.meta.vulnerable_versions === '<=99.999.99999'
+                  div.module-version Vulnerable: All
+                else
+                  div.module-version Vulnerable: #{advisory.meta.vulnerable_versions}
+
+                if advisory.meta.patched_versions === '<0.0.0'
+                  div.module-version Patched: None
+                else
+                  div.module-version Patched: #{advisory.meta.patched_versions}
 
 
 

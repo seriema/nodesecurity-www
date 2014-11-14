@@ -28,8 +28,15 @@ block content
             .module-name
               a(href='https://npmjs.org/package/#{advisory.meta.module_name}')
                 |#{advisory.module_name}
-            .module-version Vulnerable: #{advisory.meta.vulnerable_versions}
-            .module-version Patched: #{advisory.meta.patched_versions}
+            if advisory.meta.vulnerable_versions === '<=99.999.99999'
+              .module-version Vulnerable: All
+            else
+              .module-version Vulnerable: #{advisory.meta.vulnerable_versions}
+
+            if advisory.meta.patched_versions === '<0.0.0'
+              .module-version Patched: None
+            else
+              .module-version Patched: #{advisory.meta.patched_versions}
           .clearfix
 
           .advisory-description
