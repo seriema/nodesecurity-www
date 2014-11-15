@@ -3,7 +3,7 @@ title:  validator isURL Regular Expression Denial of Service
 author: Karl Düüna
 module_name: validator
 publish_date: Wed Nov 12 2014 11:45:48 GMT-0800 (PST) 
-cves: "[]"
+cves: "[{\"name\":\"CVE-2014-8882\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8882\"}]"
 vulnerable_versions: "<3.22.1"
 patched_versions: ">=3.22.1"
 ...

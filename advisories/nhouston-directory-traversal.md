@@ -3,7 +3,7 @@ title:  nhouston Directory Traversal
 author:  Riku Keski-Keturi
 module_name: nhouston
 publish_date: Fri Nov 14 2014 01:30:48 GMT-0800 (PST) 
-cves: "[]"
+cves: "[{\"name\":\"CVE-2014-8883\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8883\"}]"
 vulnerable_versions: "<=99.999.99999"
 patched_versions: "<0.0.0"
 ...
