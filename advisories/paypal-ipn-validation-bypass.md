@@ -19,4 +19,4 @@ paypal-ipn uses the `test_ipn` parameter (which is set by the PayPal IPN simulat
 - Upgrade to version 3.0.0 or greater.
 
 ## References
--[1] https://github.com/andzdroid/paypal-ipn/issues/11
+- [1] https://github.com/andzdroid/paypal-ipn/issues/11
