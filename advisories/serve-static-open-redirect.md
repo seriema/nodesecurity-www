@@ -13,7 +13,7 @@ patched_versions: ">=1.7.2"
 When using serve-static middleware version < 1.7.2 and it's configured to mount at the root it creates an open redirect on the site.
 
 For example:
-If a user visits http://example.com//www.google.com/%2e%2e they will be redirected to www.google.com
+If a user visits `http://example.com//www.google.com/%2e%2e` they will be redirected to `www.google.com`
 
 ## Recommendations
 Update to version 1.7.2 or greater. It also appears that you can set 'redirect: false' option to disable this behavior.
