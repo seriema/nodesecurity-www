@@ -9,6 +9,7 @@ var invalid_2 = require('./data/invalid_2.json');
 var invalid_3 = require('./data/invalid_3.json');
 var valid_nested = require('./data/valid_vulns_nested.json');
 var unpatched = require('./data/unpatched.json');
+var semver_test = require('./data/semver_test.json');
 
 exports['register plugin'] = function (test) {
     server.pack.register({plugin: advisories, options: {views: '../views'}}, function (err) {
@@ -187,3 +188,21 @@ exports['unpatched module'] = function (test) {
     });
 };
 
+
+exports['semver with -rcsomething'] = function (test) {
+    server.inject({
+        method: 'POST',
+        url: '/validate/shrinkwrap',
+        payload: semver_test
+
+    }, function (res) {
+        var payload;
+        test.equal(res.statusCode, '200', 'should return a 200');
+        test.doesNotThrow(function () {payload = JSON.parse(res.payload); });
+        test.equal(payload.length, 1);
+        test.ok(payload[0].module, 'should have a module key');
+        test.ok(payload[0].version, 'should have a version key');
+        test.ok(payload[0].advisory, 'show have an advisory key');
+        test.done();
+    });
+};
