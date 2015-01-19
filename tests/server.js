@@ -2,6 +2,7 @@ var Hapi = require('hapi');
 var advisories = require('../hapi-advisories');
 var config = require('config');
 var server = new Hapi.Server();
+server.connection();
 var valid_no_vulns = require('./data/valid_no_vulns.json');
 var valid_vulns = require('./data/valid_vulns.json');
 var invalid_1 = require('./data/invalid_1.json');
@@ -12,7 +13,7 @@ var unpatched = require('./data/unpatched.json');
 var semver_test = require('./data/semver_test.json');
 
 exports['register plugin'] = function (test) {
-    server.pack.register({plugin: advisories, options: {views: '../views'}}, function (err) {
+    server.register({register: advisories, options: {views: '../views'}}, function (err) {
         test.ifError(err);
         test.done();
     });

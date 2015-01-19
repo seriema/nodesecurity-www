@@ -1,4 +1,4 @@
-var Hapi = null; // Initialized during plugin registration
+var Boom = require('boom');
 var walk = require('walk');
 var fs = require('fs');
 var metamarked = require('meta-marked');
@@ -27,7 +27,6 @@ internals.defaults = {
 exports.register = function (plugin, options, next) {
     plugin.log(['info', 'hapi-advisories'], 'hapi-advisories plugin registered');
 
-    internals.setHapi(plugin.hapi);
     var settings = hoek.applyToDefaults(internals.defaults, options);
 
     plugin.views({
@@ -135,14 +134,14 @@ exports.register = function (plugin, options, next) {
         if (advisories_templates[request.params.advisory]) {
             return reply(advisories_templates[request.params.advisory]);
         }
-        return reply(Hapi.boom.notFound());
+        return reply(Boom.notFound());
     }});
 
     plugin.route({ method: 'GET', path: '/advisories/module/{module_name}', handler: function (request, reply) {
         if (module_index[request.params.module_name]) {
             return reply.view('module_advisory_list', {index: module_index[request.params.module_name]});
         }
-        return reply(Hapi.boom.notFound());
+        return reply(Boom.notFound());
     }});
 
 
@@ -188,9 +187,4 @@ exports.register = function (plugin, options, next) {
 exports.register.attributes = {
     name: 'advisories',
     version: '1.0.0'
-};
-
-
-internals.setHapi = function (module) {
-    Hapi = Hapi || module;
 };
