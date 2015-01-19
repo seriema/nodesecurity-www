@@ -1,20 +1,13 @@
 var Hapi = require('hapi');
 var config = require('config');
-var jade = require('jade');
-var bucker = require('bucker');
-var advisories = require('./hapi-advisories');
 
 // Create a server with a host and port
-var server = Hapi.createServer(config.hapi.host, config.hapi.port, config.hapi.options);
-
-server.pack.register({plugin: bucker, options: config.bucker}, function (err) {
-    if (err) console.error('failed loading bucker plugin');
-});
-
+var server = new Hapi.Server(config.hapi.options);
+server.connection({ host: config.hapi.hostname, port: config.hapi.port });
 
 server.views({
     engines: {
-        jade: jade,
+        jade: require('jade'),
     },
     path: './views'
 });
@@ -43,7 +36,21 @@ server.route({
     }
 });
 
-server.pack.register(advisories, {}, function (err) {
+server.register([
+    {
+        register: require('./hapi-advisories'),
+        options: null
+    },
+    {
+        register: require('good'),
+        options: {
+            reporters: [{
+                reporter: require('good-console'),
+                args: [{ log: '*', response: '*', request: '*' }]
+            }]
+        }
+    }
+], function (err) {
     if (err) { 
         console.log('Failed to load plugin: ' + err);
     } else {
@@ -60,7 +67,7 @@ server.pack.register(advisories, {}, function (err) {
 server.ext('onPreResponse', function (request, reply) {
     var response = request.response;
     if (!response.isBoom) {
-        return reply();
+        return reply.continue();
     }
 
     // Replace error with friendly HTML
@@ -70,6 +77,6 @@ server.ext('onPreResponse', function (request, reply) {
         message: (error.output.statusCode === 404 ? 'page not found' : 'something went wrong')
     };
 
-    reply.view('error', ctx);
+    reply.view('error', ctx).code(error.output.statusCode);
 });
 
