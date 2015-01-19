@@ -3,7 +3,7 @@ title:  serve-static Open Redirect
 author:  Pierre-Élie Fauché
 module_name: serve-static
 publish_date: Tue Jan 13 2015 14:50:48 GMT-0800 (PST) 
-cves: "[]"
+cves: "[{\"name\":\"CVE-2015-1164\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1164\"}]"
 vulnerable_versions: "<1.7.2"
 patched_versions: ">=1.7.2"
 ...
