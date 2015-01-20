@@ -7,7 +7,8 @@ Node Security Project webpage an API
 
 # Badgers
 
-[![Dependency Status](https://david-dm.org/nodesecurity/nodesecurity-www.png)](https://david-dm.org/nodesecurity/nodesecurity-www)
+[![Dependency Status](https://david-dm.org/nodesecurity/nodesecurity-www.svg)](https://david-dm.org/nodesecurity/nodesecurity-www)[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/nodesecurity/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 ## Usage
 
