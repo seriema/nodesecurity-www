@@ -22,9 +22,8 @@ this script does not work in IE 11 edge mode, but works in IE 10 compatibility v
 
 ## Recommendation:
 
-As there is no patch available we recommend switching to another markdown parser. 
+There is a pull request that may address this issue available [here](https://github.com/chjj/marked/pull/537). You may also consider an alternative markdown parser.
 
-If you have the capability to provide this project with a patch, please see the issue below and submit a pull request.
 
 ## References:
 - https://github.com/chjj/marked/issues/492
