@@ -5,7 +5,7 @@ module_name: marked
 publish_date: Thur Jan 22 2015 09:33:48 GMT-0800 (PST) 
 cves: "[]"
 vulnerable_versions: "<=0.3.2"
-patched_versions: "<0.0.0"
+patched_versions: ">=0.3.3"
 ...
 
 ## Overview
