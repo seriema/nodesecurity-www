@@ -5,7 +5,7 @@ module_name: marked
 publish_date: Thur Jan 22 2015 09:33:48 GMT-0800 (PST) 
 cves: "[]"
 vulnerable_versions: "<=0.3.2"
-patched_versions: "<0.0.0"
+patched_versions: ">=0.3.3"
 ...
 
 ## Overview
@@ -22,8 +22,7 @@ this script does not work in IE 11 edge mode, but works in IE 10 compatibility v
 
 ## Recommendation:
 
-There is a pull request that may address this issue available [here](https://github.com/chjj/marked/pull/537). You may also consider an alternative markdown parser.
-
+Update to version 0.3.3 or greater.
 
 ## References:
 - https://github.com/chjj/marked/issues/492
