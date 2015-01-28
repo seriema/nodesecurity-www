@@ -12,11 +12,11 @@ patched_versions: ">=0.3.3"
 
 Marked 0.3.2 and earlier is vulnerable to content injection even when `sanitize: true` is enabled.
 
-\[xss link](vbscript:alert(1&#41;)
+`[xss link](vbscript:alert(1&#41;)`
 
 will get a link
 
-&lt;a href="vbscript:alert(1)">xss link</a>
+`<a href="vbscript:alert(1)">xss link</a>`
 
 this script does not work in IE 11 edge mode, but works in IE 10 compatibility view.
 
