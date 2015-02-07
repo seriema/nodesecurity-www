@@ -91,7 +91,7 @@ exports.register = function (plugin, options, next) {
                 }
                 advisories[meta.meta.url] = meta;
                 plugin.log(['debug', 'hapi-advisories', 'jade'], 'rendering jade for: ' + settings.views + '/advisory.jade, ' + meta.meta.url);
-                advisories_templates[meta.meta.url] = jade.renderFile(settings.views + '/advisory.jade', {advisory: advisories[meta.meta.url]});
+                advisories_templates[meta.meta.url] = jade.renderFile(settings.views + '/advisory.jade', {title: meta.meta.title, advisory: advisories[meta.meta.url]});
 
                 advisories_rss_feed.item({
                     title:  meta.meta.title,
