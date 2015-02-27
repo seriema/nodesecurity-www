@@ -2,6 +2,7 @@
 title:  syntax-error potential for script injection
 author: Cal Leeming
 module_name: syntax-error
+nspid: NSP-2014-8
 publish_date: Tue Jul 15 2014 09:33:48 GMT-0800 (PST) 
 cves: "[]"
 vulnerable_versions: "< 1.1.1"

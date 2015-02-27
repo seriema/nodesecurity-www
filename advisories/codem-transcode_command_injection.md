@@ -2,6 +2,7 @@
 title:  codem-transcode potential command injection in ffprobe functionality
 author:  Neal Poole
 module_name: codem-transcode
+nspid: NSP-2013-8
 publish_date: Jul 07 2013 09:33:48 GMT-0800 (PST) 
 cves: "[{\"name\":\"CVE-2013-7377\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-7377\"}]"
 vulnerable_versions: "<0.5.0"

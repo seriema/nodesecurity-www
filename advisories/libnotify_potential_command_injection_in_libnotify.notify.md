@@ -2,6 +2,7 @@
 title:  Potential command injection in libnotify.notify
 author:  Adam Baldwin
 module_name: libnotify
+nspid: NSP-2013-4
 publish_date: 2013-05-15T22:30:05.853Z
 cves: "[{\"name\":\"CVE-2013-7381\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-7381\"}]"
 vulnerable_versions: "<= 1.0.3"

@@ -2,6 +2,7 @@
 title:  printer potential command injection on untrusted input
 author:  Adam Baldwin
 module_name: printer
+nspid: NSP-2014-5
 publish_date: Tue Mar 06 2014 09:33:48 GMT-0800 (PST) 
 cves: "[{\"name\":\"CVE-2014-3741\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3741\"}]"
 vulnerable_versions: "<= 0.0.1"

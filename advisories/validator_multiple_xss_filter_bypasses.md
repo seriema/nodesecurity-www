@@ -1,7 +1,8 @@
 ---
-title:  Multiple XSS Filter Bypasses
+title:  Validator Multiple XSS Filter Bypasses
 author:  Neal Poole, Krzysztof Kotowicz
 module_name: validator
+nspid: NSP-2013-7
 publish_date: Fri Jul 05 2013 12:29:10 GMT-0700 (PDT)
 cves: "[]"
 vulnerable_versions: "< 1.1.0"

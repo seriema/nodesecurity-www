@@ -2,6 +2,7 @@
 title:  Arbitrary JavaScript Execution in Bassmaster
 author:  Jarda Kotěšovec
 module_name: bassmaster
+nspid: NSP-2014-13
 publish_date: Sat Sep 27 2014 08:44:48 GMT-0800 (PST) 
 cves: "[{\"name\":\"CVE-2014-7205\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-7205\"}]"
 vulnerable_versions: "<=1.5.1"

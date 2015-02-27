@@ -2,6 +2,7 @@
 title:  sequelize SQL Injection in Order
 author:  Levan Basharuli
 module_name: sequelize
+nspid: NSP-2015-2
 publish_date: Sun Jan 18 2015 22:00:00 GMT-0800 (PST) 
 cves: "[{\"name\":\"CVE-2015-1369\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1369\"}]"
 vulnerable_versions: "<=2.0.0-rc7"

@@ -2,6 +2,7 @@
 title:  Crumb CORS Token Disclosure
 author:  Marcus Stong
 module_name: crumb
+nspid: NSP-2014-9
 publish_date: Mon Aug 1 2014 09:40:57 GMT-0700 (PST)
 cves: "[]"
 vulnerable_versions: "<3.0.0"

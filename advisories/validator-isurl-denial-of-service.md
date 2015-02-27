@@ -2,6 +2,7 @@
 title:  validator isURL Regular Expression Denial of Service
 author: Karl Düüna
 module_name: validator
+nspid: NSP-2014-16
 publish_date: Wed Nov 12 2014 11:45:48 GMT-0800 (PST) 
 cves: "[{\"name\":\"CVE-2014-8882\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8882\"}]"
 vulnerable_versions: "<3.22.1"

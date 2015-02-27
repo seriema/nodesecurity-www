@@ -2,6 +2,7 @@
 title: qs Denial-of-Service Extended Event Loop Blocking
 author: Tom Steele
 module_name: qs
+nspid: NSP-2014-11
 publish_date: Aug 6 2014 09:10:23 GMT-0800 (PST) 
 cves: "[]"
 vulnerable_versions: "<1.0.0"

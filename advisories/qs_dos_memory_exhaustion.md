@@ -2,6 +2,7 @@
 title: qs Denial-of-Service Memory Exhaustion
 author: Dustin Shiver
 module_name: qs
+nspid: NSP-2014-10
 publish_date: Aug 6 2014 09:10:22 GMT-0800 (PST) 
 cves: "[]"
 vulnerable_versions: "<1.0.0"

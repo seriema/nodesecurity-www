@@ -2,6 +2,7 @@
 title:  JS-YAML Deserialization Code Execution
 author:  Neal Poole
 module_name: js-yaml
+nspid: NSP-2013-5
 publish_date: 2013-06-23T22:23:50.005Z
 cves: "[{\"name\":\"CVE-2013-4660\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4660\"}]"
 vulnerable_versions: "<  2.0.5"

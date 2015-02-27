@@ -2,6 +2,7 @@
 title:  remarkable Content Injection
 author:  Adam Baldwin
 module_name: remarkable
+nspid: NSP-2014-17
 publish_date: Thu Nov 13 2014 12:33:48 GMT-0800 (PST) 
 cves: "[]"
 vulnerable_versions: "<1.4.1"

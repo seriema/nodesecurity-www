@@ -2,6 +2,7 @@
 title:  methodOverride Middleware Reflected Cross-Site Scripting
 author:  Sergio Arcos
 module_name: connect
+nspid: NSP-2013-6
 publish_date: 2013-07-01T01:08:59.630Z
 cves: "[{\"name\":\"CVE-2013-7370\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-7370\"}, {\"name\":\"CVE-2013-7371\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-7371\"}]"
 

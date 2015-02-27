@@ -2,6 +2,7 @@
 title:  fancy-server Directory Traversal
 author:  Adam Baldwin
 module_name: fancy-server
+nspid: NSP-2014-19
 publish_date: Fri Nov 14 2014 20:00:48 GMT-0800 (PST) 
 cves: "[]"
 vulnerable_versions: "<0.1.4"

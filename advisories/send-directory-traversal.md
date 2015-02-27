@@ -2,6 +2,7 @@
 title: send Directory Traversal
 author: Ilya Kantor
 module_name: send
+nspid: NSP-2014-12
 publish_date: Fri Sep 12 2014 08:06:33 GMT-0700 (PDT)
 cves: "[{\"name\":\"CVE-2014-6394\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6394\"}]"
 vulnerable_versions: "< 0.8.4"

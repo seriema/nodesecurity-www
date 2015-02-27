@@ -2,6 +2,7 @@
 title:  dns-sync Command Injection
 author:  Steve Kemp
 module_name: dns-sync
+nspid: NSP-2014-15
 publish_date: Tue Nov 11 2014 19:33:48 GMT-0800 (PST) 
 cves: "[]"
 vulnerable_versions: "<0.1.1"

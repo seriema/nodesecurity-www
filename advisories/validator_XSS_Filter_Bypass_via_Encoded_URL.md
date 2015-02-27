@@ -2,6 +2,7 @@
 title: Validator XSS Filter Bypass via Encoded URL
 author:  taku0
 module_name: validator
+nspid: NSP-2014-14
 publish_date: Mon Oct 27 2014 09:33:48 GMT-0800 (PST) 
 cves: "[]"
 vulnerable_versions: "<2.0.0"

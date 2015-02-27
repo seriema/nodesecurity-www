@@ -2,6 +2,7 @@
 title:  paypal-ipn validation bypass
 author:  Martin Angelov
 module_name: paypal-ipn
+nspid: NSP-2014-20
 publish_date: Wed Dec 03 2014 05:00:00 GMT-0800 (PST) 
 cves: "[]"
 vulnerable_versions: "<3.0.0"

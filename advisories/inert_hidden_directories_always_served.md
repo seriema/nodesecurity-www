@@ -2,6 +2,7 @@
 title:  inert Hidden Directories always served
 author:  Gil Pedersen
 module_name: inert
+nspid: NSP-2014-21
 publish_date: Mon Dec 15 2014 19:13:48 GMT-0800 (PST) 
 cves: "[]"
 vulnerable_versions: "<1.1.1"

@@ -2,6 +2,7 @@
 title:  marked regular expression denial of service
 author:  Barış Soner Uşaklı
 module_name: marked
+nspid: NSP-2015-4
 publish_date: Thur Jan 22 2015 09:33:48 GMT-0800 (PST) 
 cves: "[]"
 vulnerable_versions: "<=0.3.3"
