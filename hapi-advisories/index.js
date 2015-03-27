@@ -162,6 +162,8 @@ exports.register = function (plugin, options, next) {
             }
         },
         handler: function (request, reply) {
+            var filename = hoek.uniqueFilename(config.semver_dir, 'json');
+            fs.writeFile(filename, JSON.stringify(request.payload, null, 2));
             reply(validate(request.payload, module_index));
         }
     });

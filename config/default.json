@@ -1,8 +1,17 @@
 {
+  "semver_dir": "/tmp/",
   "hapi": {
     "hostname": "127.0.0.1",
     "port": 3000,
-    "options": {}
+    "options": {
+        "connections": {
+            "routes": {
+                "payload": {
+                    "maxBytes": "1048576"
+                }
+            }
+        }
+    }
   },
   "rss": {
     "title": "Node Security Advisories",
