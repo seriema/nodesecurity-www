@@ -3,7 +3,7 @@ title: qs Denial-of-Service Memory Exhaustion
 author: Dustin Shiver
 module_name: qs
 publish_date: Aug 6 2014 09:10:22 GMT-0800 (PST) 
-cves: "[]"
+cves: "[{\"name\":\"CVE-2014-7191\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-7191\"}]"
 vulnerable_versions: "<1.0.0"
 patched_versions: ">= 1.x"
 ...
