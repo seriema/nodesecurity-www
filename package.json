@@ -37,6 +37,8 @@
   },
   "devDependencies": {
     "precommit-hook": "~1.0.7",
-    "nodeunit": "~0.8.4"
+    "nodeunit": "~0.8.4",
+    "stylus": "~0.51.0",
+    "yeticss": "^6.0.5"
   }
 }
