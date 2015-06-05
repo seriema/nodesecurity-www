@@ -56,7 +56,10 @@ server.register([
     } else {
         console.log('Loaded advisories');
         // Start the server
-        server.start(function () {
+        server.start(function (err) {
+            if (err) {
+                throw err;
+            }
             console.log('Started Server on port: ', config.hapi.port);
         });
     }

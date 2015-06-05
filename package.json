@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "cd tests; ../node_modules/.bin/nodeunit server.js",
-    "start": "node server.js"
+    "start-dev": "grunt serve",
+    "start-prod": "node server.js",
+    "start": "if [ \"$NODE_ENV\" = \"production\" ]; then npm run start-prod; else npm run start-dev; fi"
   },
   "repository": {
     "type": "git",
@@ -36,9 +38,14 @@
     "walk": "~2.3.1"
   },
   "devDependencies": {
-    "precommit-hook": "~1.0.7",
+    "autoprefixer-stylus": "^0.6.0",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-stylus": "^0.21.0",
+    "grunt-contrib-watch": "^0.6.1",
     "nodeunit": "~0.8.4",
-    "stylus": "~0.51.0",
-    "yeticss": "^6.0.5"
+    "precommit-hook": "~1.0.7",
+    "yeticss": "^6.0.6"
   }
 }
