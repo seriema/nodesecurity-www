@@ -39,14 +39,6 @@ server.route({
 
 server.route({
     method: 'GET',
-    path: '/privacy',
-    handler: {
-        view: 'privacy'
-    }
-});
-
-server.route({
-    method: 'GET',
     path: '/report',
     handler: {
         view: 'report'
@@ -66,14 +58,6 @@ server.route({
     path: '/resources',
     handler: {
         view: 'resources'
-    }
-});
-
-server.route({
-    method: 'GET',
-    path: '/terms',
-    handler: {
-        view: 'terms'
     }
 });
 

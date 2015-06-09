@@ -4,11 +4,24 @@
 *
 --------------------------------------------------------------------*/
 
-.logo-requiresafe
+.logo
   display: inline-block
-  background: no-repeat center center
-  background-image: $logo-requiresafe
-  background-size: contain
   text-indent: -9999em
+  background: no-repeat center center
+  background-size: contain
+  opacity: 1
+  transition: opacity .3s ease-in
+
+  &:hover
+    opacity: .6
+
+.logo-requiresafe
+  background-image: $logo-requiresafe
+
+.logo-andyet
+  background-image: $logo-andyet
+
+.logo-lift
+  background-image: $logo-lift
 
 $logo-nodesecurity = url(unquote('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA1MDAgNTAwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MDAgNTAwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwb2x5Z29uIGZpbGw9IiMxMkFDRUYiIHBvaW50cz0iODYsMTU2LjEgMjQ5LjUsNjIuMiA0MTMsMTU2LjEgNDEzLDM0My45IDI0OS41LDQzNy44IDg2LDM0My45IAkiLz4NCgk8Zz4NCgkJPGc+DQoJCQk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMzA3LDIzNi44di0zNC4xYzAtMzEuMy0yNS4zLTU2LjYtNTYuNi01Ni42Yy0wLjQsMC0wLjcsMC0xLjEsMGMtMC4zLDAtMC43LDAtMSwwDQoJCQkJYy0zMS4zLDAtNTYuNiwyNS4zLTU2LjYsNTYuNnYzNC4xaC0yMHYxMTcuMWgxNTUuOVYyMzYuOEgzMDd6IE0yMjAsMjAyLjdjMC0xNS42LDEyLjctMjguMywyOC4zLTI4LjNjMC40LDAsMS40LDAsMS40LDANCgkJCQlzMC41LDAsMC43LDBjMTUuNiwwLDI4LjMsMTIuNywyOC4zLDI4LjN2MzQuMUgyMjBWMjAyLjd6Ii8+DQoJCTwvZz4NCgk8L2c+DQo8L2c+DQo8L3N2Zz4NCg=='))
