@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  .container.report(role='main')
+
+    section.mt2
+      h2.center Report a vulnerability
+
+      .grid-flex-container
+
+        .grid-flex-cell
+          p Please fill out the form to report a vulnerability or email a description to <a href='mailto:report@nodesecurity.io'>report@nodesecurity.io</a>.
+          h4 Our disclosure timeline
+          ol.timeline
+            li Vulnerability is identified or Disclosed to Node Security Project or <a href='//requiresafe.com'>RequireSafe</a> - We will endeavor to keep reporter / finder in the loop with all communications / events.
+            li Maintainers are notified if necessary
+            li RequireSafe premium clients are notified and provided guidance and recommendations for mitigation
+            li After fix is made available. Public advisory is finalized.
+            li If no fix is available after 45 days the advisory will timeout and will be made public
+
+        .grid-flex-cell
+          form
+            .form-element
+              label(for='name') Name*
+              input.form-input(type='text' id='name' required)
+            .form-element
+              label(for='email') Email Address*
+              input.form-input(type='text' id='email' required)
+            .form-element
+              label(for='module') Module name & version
+              input.form-input(type='text' id='module')
+            .form-element
+              label(for='desc') Description of vulnerability
+              textarea.form-input(type='text' id='desc')
+              span.footnote Please include any references, commits, or code examples that would be useful in reproducing the issue
+            button.button.button-outlined(type='submit') Submit

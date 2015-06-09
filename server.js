@@ -30,9 +30,57 @@ server.route({
 
 server.route({
     method: 'GET',
+    path: '/contribute',
+    handler: {
+        view: 'contribute'
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/privacy',
+    handler: {
+        view: 'privacy'
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/report',
+    handler: {
+        view: 'report'
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/research',
+    handler: {
+        view: 'research'
+    }
+});
+
+server.route({
+    method: 'GET',
     path: '/resources',
     handler: {
         view: 'resources'
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/terms',
+    handler: {
+        view: 'terms'
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/tools',
+    handler: {
+        view: 'tools'
     }
 });
 
