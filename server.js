@@ -1,5 +1,7 @@
 var Hapi = require('hapi');
 var config = require('config');
+var Joi = require('joi');
+var postageapp = require('postageapp')(config.postageapp.apiKey);
 
 // Create a server with a host and port
 var server = new Hapi.Server(config.hapi.options);
@@ -66,6 +68,44 @@ server.route({
     path: '/tools',
     handler: {
         view: 'tools'
+    }
+});
+
+server.route({
+    method: 'post',
+    path: '/report',
+    handler: function (request, reply) {
+        config.postageapp.opts.variables = {
+            'message' : request.payload.message,
+            'name': request.payload.name,
+            'stamp': Date.now(),
+            'page': request.payload.page || ''
+        };
+
+        config.postageapp.opts.subject = request.payload.name + ' | Node Security Vulnerability Report Email' || config.postageapp.subject;
+        config.postageapp.opts.from = request.payload.email;
+
+        postageapp.sendMessage(config.postageapp.opts, function callback() {
+            reply.view('thanks', {title: ''});
+            console.log('Successful email sent:');
+            console.log('Name: ', request.payload.name, 'Email: ', request.payload.email);
+            console.log('Sent to: ' + config.postageapp.opts.recipients);
+        }, function err() {
+            console.log('Messed Up sending email');
+            console.log(JSON.stringify(arguments));
+            reply.view('bademail', {title: 'asdf'});
+        });
+    },
+    config: {
+        validate: {
+            payload: {
+                name: Joi.string().required(),
+                email: Joi.string().required(),
+                module: Joi.string(),
+                description: Joi.string().required(),
+                page: Joi.string()
+            }
+        }
     }
 });
 

@@ -13,6 +13,18 @@
         }
     }
   },
+  "postageapp": {
+      "apiKey": "",
+      "subject": "Vulnerability Report via nodesecurity.io",
+      "opts": {
+          "recipients": ["report@nodesecurity.io"],
+          "content" : {
+              "text/plain" : "Text Content",
+              "text/html" : "HTML Content"
+          },
+          "template" : "default"
+      }
+  },
   "rss": {
     "title": "Node Security Advisories",
     "description": "description",
