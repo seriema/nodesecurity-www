@@ -2,9 +2,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-jade');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.registerTask('server', 'Starting server', function (done) {
       grunt.log.write('Preparing server to start');
