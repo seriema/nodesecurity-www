@@ -9,7 +9,8 @@ server.views({
     engines: {
         jade: require('jade'),
     },
-    path: './views'
+    path: './views',
+    isCached: process.env.NODE_ENV==='production'
 });
 
 server.route({
