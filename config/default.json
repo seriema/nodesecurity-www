@@ -17,7 +17,7 @@
       "apiKey": "",
       "subject": "Vulnerability Report via nodesecurity.io",
       "opts": {
-          "recipients": ["report@nodesecurity.io"],
+          "recipients": ["contact@liftsecurity.io"],
           "content" : {
               "text/plain" : "Text Content",
               "text/html" : "HTML Content"
