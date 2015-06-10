@@ -93,7 +93,7 @@ server.route({
         }, function err() {
             console.log('Messed Up sending email');
             console.log(JSON.stringify(arguments));
-            reply.view('bademail', {title: 'asdf'});
+            reply.view('bademail', {title: 'Problem sending email'});
         });
     },
     config: {
@@ -102,8 +102,7 @@ server.route({
                 name: Joi.string().required(),
                 email: Joi.string().required(),
                 module: Joi.string(),
-                description: Joi.string().required(),
-                page: Joi.string()
+                description: Joi.string().required()
             }
         }
     }
