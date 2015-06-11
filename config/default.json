@@ -22,7 +22,7 @@
               "text/plain" : "Text Content",
               "text/html" : "HTML Content"
           },
-          "template" : "default"
+          "template" : "nsp_report"
       }
   },
   "rss": {
