@@ -13,18 +13,6 @@
         }
     }
   },
-  "postageapp": {
-      "apiKey": "",
-      "subject": "Vulnerability Report via nodesecurity.io",
-      "opts": {
-          "recipients": ["contact@liftsecurity.io"],
-          "content" : {
-              "text/plain" : "Text Content",
-              "text/html" : "HTML Content"
-          },
-          "template" : "nsp_report"
-      }
-  },
   "rss": {
     "title": "Node Security Advisories",
     "description": "description",
