@@ -6,8 +6,13 @@
 
 
 .hero
-  background: url(/img/header-bg.svg) repeat-x 50% 50%
-  background-size: auto 101%
+  background: repeat-x center center
+  background-image: url(/img/header-bg.svg),
+                    linear-gradient(to bottom, rgba(18,172,239,0) 15%,
+                                               rgba(18,172,239,.6) 40%,
+                                               rgba(18,172,239,.6) 60%,
+                                               rgba(18,172,239,0) 85%)
+  background-size: 884px 380px, contain
 
   .container
     height: 380px
@@ -15,13 +20,17 @@
 
   h2
     width: 100%
-    padding: 0 20px
+    max-width: 600px
+    height: 170px
+    display: block
     position: absolute
     top: 50%
-    transform: translateY(-50%)
-    font-size: $font-h1
-    color: white
-    text-shadow: 0 0 7px rgba(31,71,83,.2)
+    left: 50%
+    transform: translate(-50%, -50%)
+    background: url(/img/nsp-header-lettering.svg) no-repeat center center
+    background-size: contain
+    text-indent: -9999em
+
 
 .home
 
@@ -40,3 +49,14 @@
       height: 50px
     &.logo-lift
       height: 40px
+
+@media screen and (max-width: $breakpoint-mid-mobile)
+
+  .hero
+    background-size: 699px 300px, contain
+
+    .container
+      height: 300px
+
+    h2
+      height: 130px
