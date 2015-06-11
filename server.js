@@ -49,6 +49,22 @@ server.route({
 
 server.route({
     method: 'GET',
+    path: '/thanks',
+    handler: {
+        view: 'thanks'
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/bademail',
+    handler: {
+        view: 'bademail'
+    }
+});
+
+server.route({
+    method: 'GET',
     path: '/research',
     handler: {
         view: 'research'
@@ -78,22 +94,21 @@ server.route({
         config.postageapp.opts.variables = {
             'message' : request.payload.message,
             'name': request.payload.name,
-            'stamp': Date.now(),
-            'page': request.payload.page || ''
+            'stamp': Date.now()
         };
 
         config.postageapp.opts.subject = request.payload.name + ' | Node Security Vulnerability Report Email' || config.postageapp.subject;
         config.postageapp.opts.from = request.payload.email;
 
         postageapp.sendMessage(config.postageapp.opts, function callback() {
-            reply.view('thanks', {title: ''});
+            reply.view('thanks');
             console.log('Successful email sent:');
             console.log('Name: ', request.payload.name, 'Email: ', request.payload.email);
             console.log('Sent to: ' + config.postageapp.opts.recipients);
         }, function err() {
             console.log('Messed Up sending email');
             console.log(JSON.stringify(arguments));
-            reply.view('bademail', {title: 'Problem sending email'});
+            reply.view('bademail');
         });
     },
     config: {
