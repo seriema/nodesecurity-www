@@ -22,7 +22,7 @@ block content
             li If no fix is available after 45 days the advisory will timeout and will be made public
 
         .grid-flex-cell
-          form(action='', method='post')
+          form(action='/contact', method='post')
             input(name='page', type='hidden', value='nodesecurity.io/report')
             input(name='success_page', type='hidden', value='nodesecurity.io/thanks')
             input(name='error_page', type='hidden', value='nodesecurity.io/email-error')
