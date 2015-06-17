@@ -1,21 +1,19 @@
 extends layout
 
-
 block content
-  .content-container(role="main")
-    .container
-        ul.nav
-          each advisory in index
-            li.advisory.row-fluid
-              .span9.advisory-left
-                div.advisory-title: a(href='/advisories/#{advisory.url}') #{advisory.title}
-                div.advisory-date
-                  i.icon-calendar
-                  | #{advisory.publish_date}
-              .span3.advisory-right
-                div.module-name: a(href='/package/#{advisory.module_name}') #{advisory.module_name}
-                div.module-version Vulnerable: #{advisory.vulnerable_versions}
-                div.module-version Patched: #{advisory.patched_versions}
+  .container(role='main')
+    ul.nav
+      each advisory in index
+        li.advisory
+          .advisory-left
+            div.advisory-title: a(href='/advisories/#{advisory.url}') #{advisory.title}
+            div.advisory-date
+              i.icon-calendar
+              | #{advisory.publish_date}
+          .advisory-right
+            div.module-name: a(href='/package/#{advisory.module_name}') #{advisory.module_name}
+            div.module-version Vulnerable: #{advisory.vulnerable_versions}
+            div.module-version Patched: #{advisory.patched_versions}
 
 
 

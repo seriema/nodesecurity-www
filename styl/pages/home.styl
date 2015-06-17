@@ -1,0 +1,62 @@
+/*--------------------------------------------------------------------
+*
+* $HOME PAGE
+*
+--------------------------------------------------------------------*/
+
+
+.hero
+  background: repeat-x center center
+  background-image: url(/img/header-bg.svg),
+                    linear-gradient(to bottom, rgba(18,172,239,0) 15%,
+                                               rgba(18,172,239,.6) 40%,
+                                               rgba(18,172,239,.6) 60%,
+                                               rgba(18,172,239,0) 85%)
+  background-size: 884px 380px, contain
+
+  .container
+    height: 380px
+    position: relative
+
+  h2
+    width: 100%
+    max-width: 600px
+    height: 170px
+    display: block
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background: url(/img/nsp-header-lettering.svg) no-repeat center center
+    background-size: contain
+    text-indent: -9999em
+
+
+.home
+
+  .logo-requiresafe
+    width: 100%
+    max-width: 300px
+    height: 40px
+    margin-bottom: $space
+
+.sponsors
+
+  .logo
+    width: 150px
+    
+    &.logo-andyet
+      height: 50px
+    &.logo-lift
+      height: 40px
+
+@media screen and (max-width: $breakpoint-mid-mobile)
+
+  .hero
+    background-size: 699px 300px, contain
+
+    .container
+      height: 300px
+
+    h2
+      height: 130px

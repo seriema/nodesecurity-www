@@ -1,0 +1,46 @@
+/*--------------------------------------------------------------------
+*
+* $REPORT A VULNERABILITY PAGE
+*
+--------------------------------------------------------------------*/
+
+
+.report
+
+  .timeline
+    margin-left: 10px
+    padding-left: 20px
+    border-left: 1px solid $blue-light
+    list-style: none
+    font-size: $mobile-font-h6
+
+    li
+      margin-bottom: 20px
+      position: relative
+
+      &:before
+        width: 12px
+        height: @width
+        content: ''
+        position: absolute
+        left: -26px
+        top: 4px
+        background: $blue-lighter
+        border: 1px solid $blue
+        border-radius: 100%
+
+      &:first-child:before,
+      &:last-child:before
+        width: 24px
+        height: @width
+        padding: 2px
+        left: -33px
+        top: 0
+        text-align: center
+        font-size: $font-small
+        font-weight: $font-weight-medium
+        color: $blue-saturated-lighter
+      &:first-child:before
+        content: '0'
+      &:last-child:before
+        content: '45'

@@ -20,4 +20,6 @@ $ node server.js
 $ open http://localhost:3000
 ```
 
+## Fonts
 
+Fonts are served via Typekit; owner is @lynnandtonic

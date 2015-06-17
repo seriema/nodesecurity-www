@@ -1,17 +1,52 @@
 extends layout
 
 block content
-  .content-container(role="main")
-    .container
-      .hero-unit.homepage
-        h3 A Project About Node Security in Three Acts:
-        ol
-          li Audit every single module in npm.
-          li Provide advisories, issues and pull requests so modules get fixed.
-          li Provide a public API + DB of audit results.
-        h3 WE NEED YOUR HELP
-        p.well.
-          Our goals are ambitious, but reachable with help from developers in the Node community and security researchers.
-          We've been quietly working away at this for a few months now. It's no small undertaking. Our biggest challenge is auditing the existing module base.
-          We plan to perform this distributed audit thorough a ticket system that members of the community can contribute manpower to. As we build and refine static analysis tools we will be able to do more automated verification, handy but not nearly as thorough as manual auditing.
-          This project will not only help improve the security of the Node landscape on a technical level, it also helps provide confidence to developers and enterprises about the state of security in Node.js land.
+
+  div.hero.mb2
+    .container.center
+      h2 Security is a core value of the Node community
+
+  .container.home(role='main')
+
+    section.center
+      h2 Contribute
+      p.content-narrower Security in Node is a top priority if we all help make it that way. Learn more about how you can <a href='/contribute'>contribute</a>.
+      p.content-narrower If you find a vulnerability, please make it known.
+      a.button.button-outlined.button-outlined-warn(href='/report') Report a vulnerability
+
+    section.grid-flex-container.center
+      .grid-flex-cell
+        h3 Tools
+        p.mb0 Tools keep known vulnerabilities from creeping into your projects. 
+          a(href='/tools') Get started.
+      .grid-flex-cell
+        h3 Resources
+        p.mb0 Talks, blog posts, and articles about and related to Node security. 
+          a(href='') View resources.
+
+    section.center
+      a.logo.logo-requiresafe(href='//requiresafe.com') RequireSafe
+      p.content-narrower What if security pros could audit your Node modules and alert you to vulnerabilities? That's <a href='//requiresafe.com'>RequireSafe</a>, brought to you by <a href='//liftsecurity.io/'>^Lift Security</a>.
+
+    section.center
+      .content-narrower
+        h2 Node Security Newsletter
+        p There really hasn’t been a great source for all things node security news, and we want to change that. Sign up to get the Node Security Newsletter, dispatched every two weeks.
+
+        form.left(action='https://andyet.createsend.com/t/r/s/tisllh/' method='post' id='subForm')
+          fieldset
+            div.form-element
+              label(for='fieldName') Name
+              input.form-input(id='fieldName' name='cm-name' type='text')
+            div.form-element
+            label(for='fieldEmail') Email
+            input.form-input(id='fieldEmail' name='cm-tisllh-tisllh' type='email' required)
+            div.form-element.form-submit
+            button.button.button-outlined(type='submit') Subscribe
+
+    section.center
+      p.content-narrower The Node Security Project could not be possible without the gracious support from these companies.
+      .sponsors.mb2.mt2
+        a.logo.logo-lift(href='//liftsecurity.io') Lift Security
+        a.logo.logo-andyet(href='//andyet.com') &yet
+      p Become a sponsor of the Node Security Project. <a href='mailto:contact@liftsecurity.io'>Contact us</a>.

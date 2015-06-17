@@ -1,0 +1,49 @@
+/*--------------------------------------------------------------------
+*
+* $ADVISORIES PAGE
+*
+--------------------------------------------------------------------*/
+
+.advisories
+
+  table
+
+    thead th
+      background: $blue-lighter
+
+    tbody td:last-child
+      width: 30%
+
+    .advisory-date,
+    .module-version
+      font-size: $mobile-font-h6
+
+      span
+        font-weight: $font-weight-bold
+
+.advisory
+
+  section.module-intro
+
+    p
+      margin-bottom: 0
+
+  h1
+    font-size: $font-h2
+
+  h2
+    font-size: $font-h3
+
+  ul > li > a
+    word-wrap: break-word
+
+@media screen and (min-width: $breakpoint-mid-mobile)
+
+  .advisory
+
+    section.module-intro
+      padding-bottom: 0
+
+    .module-details
+      margin-top: 20px
+      text-align: right
