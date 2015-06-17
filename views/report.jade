@@ -22,10 +22,9 @@ block content
             li If no fix is available after 45 days the advisory will timeout and will be made publicly available.
 
         .grid-flex-cell
-          form(action='/contact', method='post')
-            input(name='page', type='hidden', value='nodesecurity.io/report')
-            input(name='success_page', type='hidden', value='nodesecurity.io/thanks')
-            input(name='error_page', type='hidden', value='nodesecurity.io/email-error')
+          form(action='https://howdy.andyet.com/contact/nodesecurity/main', method='post')
+            input(name='success_page', type='hidden', value='/thanks')
+            input(name='error_page', type='hidden', value='/email-error')
             .form-element
               label(for='fieldName') Name*
               input.form-input(id='fieldName', name='name', type='text', required)

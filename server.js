@@ -1,7 +1,6 @@
 var Hapi = require('hapi');
 var Joi = require('joi');
 var config = require('config');
-var postageapp = require('postageapp')(config.postageapp.apiKey);
 
 // Create a server with a host and port
 var server = new Hapi.Server(config.hapi.options);
@@ -84,47 +83,6 @@ server.route({
     path: '/tools',
     handler: {
         view: 'tools'
-    }
-});
-
-
-server.route({
-    method: 'post',
-    path: '/contact',
-    handler: function (request, reply) {
-        config.postageapp.opts.variables = {
-            'description' : request.payload.description,
-            'module': request.payload.module,
-            'name': request.payload.name,
-            'stamp': Date.now()
-        };
-
-        config.postageapp.opts.subject = request.payload.name + ' | Awesome Node Security Project Email';
-        config.postageapp.opts.from = request.payload.email;
-
-        postageapp.sendMessage(config.postageapp.opts, function callback() {
-            reply.view('email-success', {title: ''});
-            console.log('Successful email sent:');
-            console.log('Name: ', request.payload.name, 'Email: ', request.payload.email);
-            console.log('Sent to: ' + config.postageapp.opts.recipients);
-        }, function err() {
-            console.log('Messed Up sending email');
-            console.log(JSON.stringify(arguments));
-            reply.view('email-error', {title: 'whoops', message: 'Something message up, please email report@nodesecurity.io'});
-        });
-    },
-    config: {
-        validate: {
-            payload: {
-                name: Joi.string().required(),
-                email: Joi.string().required(),
-                module: Joi.string(),
-                description: Joi.string(),
-                page: Joi.string(),
-                success_page: Joi.string(),
-                error_page: Joi.string()
-            }
-        }
     }
 });
 
