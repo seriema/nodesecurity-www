@@ -1,0 +1,41 @@
+block vars
+  - var title = 'Report a Vulnerability'
+
+extends layout
+
+block content
+  .container.report(role='main')
+
+    section.mt2
+      h2.center Report a vulnerability
+
+      .grid-flex-container
+
+        .grid-flex-cell
+          p Please fill out the form to report a vulnerability or email a description to <a href='mailto:report@nodesecurity.io'>report@nodesecurity.io</a>.
+          h4 Our disclosure timeline
+          ol.timeline
+            li Vulnerability is identified or Disclosed to Node Security Project or <a href='//requiresafe.com'>RequireSafe</a> - We will endeavor to keep reporter / finder in the loop with all communications / events.
+            li Maintainers are notified if it's not a self disclosure.
+            li RequireSafe customers are notified and provided guidance and recommendations for mitigation
+            li After a fix is made available the public advisory is finalized and a [CVE](http://cve.mitre.org/) requested.
+            li If no fix is available after 45 days the advisory will timeout and will be made publicly available.
+
+        .grid-flex-cell
+          form(action='https://howdy.andyet.com/contact/nodesecurity/main', method='post')
+            input(name='success_page', type='hidden', value='/thanks')
+            input(name='error_page', type='hidden', value='/email-error')
+            .form-element
+              label(for='fieldName') Name*
+              input.form-input(id='fieldName', name='name', type='text', required)
+            .form-element
+              label(for='fieldEmail') Email Address*
+              input.form-input(id='fieldEmail', name='email', type='text', required)
+            .form-element
+              label(for='module') Module name & version
+              input.form-input(id='module', name='module', type='text')
+            .form-element
+              label(for='desc') Description of vulnerability
+              textarea.form-input(id='desc', name='description', type='text')
+              span.footnote Please include any references, commits, or code examples that would be useful in reproducing the issue
+            input.button.button-outlined(type='submit', value='Submit')

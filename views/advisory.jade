@@ -1,52 +1,47 @@
 extends layout
 
 block content
-  .content-container(role="main")
-    .container
-      .row-fluid
-        .hero-unit.advisory-detail
-          .span8
-            .advisory-title
-              h1= advisory.meta.title
-            i.icon-calendar
-            | #{advisory.meta.publish_date}
-            if advisory.meta.cves
-              .advisory-author
-                if advisory.meta.cves.length > 0
-                  each cve in advisory.meta.cves
-                    i.icon-tag
-                    |  <a href="#{cve.link}">#{cve.name}</a>&nbsp;
-                  #{advisory.meta.cve} 
-                else
-                  i.icon-tag
-                  | CVE-PENDING
-              i.icon-user
-              | &nbsp;Credit: #{advisory.meta.author}
-             
+  .container.advisory(role='main')
 
-          .span4.advisory-right
-            .module-name
-              a(href='https://npmjs.org/package/#{advisory.meta.module_name}')
-                |#{advisory.module_name}
-            if advisory.meta.vulnerable_versions === '<=99.999.99999'
-              .module-version Vulnerable: All
+    section.module-intro.grid-flex-container.mt2
+      .grid-flex-cell
+        h1.advisory-title= advisory.meta.title
+
+        p #{advisory.meta.publish_date}
+        if advisory.meta.cves
+          .advisory-author
+            if advisory.meta.cves.length > 0
+              each cve in advisory.meta.cves
+                p: <a href='#{cve.link}'>#{cve.name}</a>
+              #{advisory.meta.cve} 
             else
-              .module-version Vulnerable: #{advisory.meta.vulnerable_versions}
+              p CVE-PENDING
+          p Credit: #{advisory.meta.author}
 
-            if advisory.meta.patched_versions === '<0.0.0'
-              .module-version Patched: None
-            else
-              .module-version Patched: #{advisory.meta.patched_versions}
-          .clearfix
+      .module-details.grid-flex-cell.grid-flex-cell-1of3
+        .module-name
+          a(href='https://npmjs.org/package/#{advisory.meta.module_name}')
+            | #{advisory.module_name}
+        if advisory.meta.vulnerable_versions === '<=99.999.99999'
+          .module-version Vulnerable: All
+        else
+          .module-version Vulnerable: #{advisory.meta.vulnerable_versions}
 
-          .advisory-description
-            != advisory.html
+        if advisory.meta.patched_versions === '<0.0.0'
+          .module-version Patched: None
+        else
+          .module-version Patched: #{advisory.meta.patched_versions}
 
-          #disqus_thread
-            script(type="text/javascript").
-              var disqus_shortname = 'nodesecurity';
-              (function() {
-                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-              })();
+    section
+      .advisory-description
+        != advisory.html
+
+    section
+      #disqus_thread
+        script(type='text/javascript').
+          var disqus_shortname = 'nodesecurity';
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();

@@ -1,4 +1,5 @@
 var Hapi = require('hapi');
+var Joi = require('joi');
 var config = require('config');
 
 // Create a server with a host and port
@@ -9,7 +10,8 @@ server.views({
     engines: {
         jade: require('jade'),
     },
-    path: './views'
+    path: './views',
+    isCached: process.env.NODE_ENV==='production'
 });
 
 server.route({
@@ -30,11 +32,60 @@ server.route({
 
 server.route({
     method: 'GET',
+    path: '/contribute',
+    handler: {
+        view: 'contribute'
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/report',
+    handler: {
+        view: 'report'
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/thanks',
+    handler: {
+        view: 'email-success'
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/email-error',
+    handler: {
+        view: 'email-error'
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/research',
+    handler: {
+        view: 'research'
+    }
+});
+
+server.route({
+    method: 'GET',
     path: '/resources',
     handler: {
         view: 'resources'
     }
 });
+
+server.route({
+    method: 'GET',
+    path: '/tools',
+    handler: {
+        view: 'tools'
+    }
+});
+
 
 server.register([
     {
@@ -56,7 +107,10 @@ server.register([
     } else {
         console.log('Loaded advisories');
         // Start the server
-        server.start(function () {
+        server.start(function (err) {
+            if (err) {
+                throw err;
+            }
             console.log('Started Server on port: ', config.hapi.port);
         });
     }

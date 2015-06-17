@@ -2,29 +2,35 @@ extends layout
 
 
 block content
-  .content-container(role="main")
-    .container
-      - each year in Object.keys(index).sort().reverse()
-        h2= year
-        ul.nav
+  .container.advisories(role='main')
+    h2.center.mt2 Advisories
+    - each year in Object.keys(index).sort().reverse()
+      table.table-outlined.table-with-hover
+        thead
+          tr
+            th= year
+            th
+        tbody
           each advisory in index[year]
-            li.advisory.row-fluid
-              .span9.advisory-left
+            tr
+              td
                 div.advisory-title: a(href='/advisories/#{advisory.meta.url}') #{advisory.meta.title}
-                div.advisory-date
-                  i.icon-calendar
-                  | #{advisory.meta.publish_date}
-              .span3.advisory-right
+                div.advisory-date #{advisory.meta.publish_date}
+              td
                 div.module-name: a(href='/advisories/module/#{advisory.meta.module_name}') #{advisory.meta.module_name}
                 if advisory.meta.vulnerable_versions === '<=99.999.99999'
-                  div.module-version Vulnerable: All
+                  div.module-version Vulnerable: 
+                    span All
                 else
-                  div.module-version Vulnerable: #{advisory.meta.vulnerable_versions}
+                  div.module-version Vulnerable: 
+                    span #{advisory.meta.vulnerable_versions}
 
                 if advisory.meta.patched_versions === '<0.0.0'
-                  div.module-version Patched: None
+                  div.module-version Patched: 
+                    span None
                 else
-                  div.module-version Patched: #{advisory.meta.patched_versions}
+                  div.module-version Patched: 
+                    span #{advisory.meta.patched_versions}
 
 
 

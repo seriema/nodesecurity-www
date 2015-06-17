@@ -1,0 +1,40 @@
+/*--------------------------------------------------------------------
+*
+* $HEADER
+*
+--------------------------------------------------------------------*/
+
+.header-has-logo
+
+  &:before
+    width: 100%
+    height: 10px
+    display: block
+    content: ''
+    background-image: linear-gradient(to right, $blue, $blue-lighter)
+
+  h1
+    margin-top: 32px
+    font-size: $font-base
+
+  .nodesecurity-logo
+    padding: 9px
+    padding-left: 40px
+    background: no-repeat 0 50%
+    background-image: $logo-nodesecurity
+    font-weight: $font-weight-medium
+    color: $gray-darker
+    opacity: 1
+    transition: opacity .3s ease-in
+
+    &:hover
+      opacity: .6
+
+.top-nav
+  margin-top: $ui-padding-spaced
+  font-size: $font-base
+
+//- Top Nav Light Variation
+
+.top-nav-light
+  border-bottom: none
