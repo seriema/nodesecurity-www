@@ -1,6 +1,6 @@
 ---
 title:  CSRF Vulnerability in jquery-ujs
-author:  Callum Macrae
+author:  Ben Toews of GitHub
 module_name: jquery-ujs
 publish_date: 2015-06-24T09:00:00.00Z 
 cves: "[{\"name\":\"CVE-2015-1840\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1840\"}]"
@@ -30,6 +30,7 @@ Upgrade to the latest version
 
 ## References
 
+- hackerone.com: https://hackerone.com/reports/49935
 - npm: https://www.npmjs.com/package/jquery-ujs
 - rubyonrails-security: https://groups.google.com/forum/#!msg/rubyonrails-security/XIZPbobuwaY/fqnzzpuOlA4J
 - github: https://github.com/rails/jquery-ujs
