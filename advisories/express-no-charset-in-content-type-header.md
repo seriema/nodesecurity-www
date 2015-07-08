@@ -9,7 +9,7 @@ patched_versions: ">=3.11 <4 || >=4.5"
 ---
 
 ## Overview
-Vulnerable versions of express do not specify a charset field in the content-type heade while displaying 400 level response messages. The lack of enforcing user's browser to set correct charset, could be leveraged by an attacker to perform a cross-site scripting attack, using non-standard encodings, like UTF-7.
+Vulnerable versions of express do not specify a charset field in the content-type header while displaying 400 level response messages. The lack of enforcing user's browser to set correct charset, could be leveraged by an attacker to perform a cross-site scripting attack, using non-standard encodings, like UTF-7.
 
 ## Recommendation
 Update express to a patched version.
