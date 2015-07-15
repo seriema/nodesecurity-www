@@ -11,7 +11,7 @@ block content
               i.icon-calendar
               | #{advisory.publish_date}
           .advisory-right
-            div.module-name: a(href='/package/#{advisory.module_name}') #{advisory.module_name}
+            div.module-name: a(href='https://www.npmjs.com/package/#{advisory.module_name}') #{advisory.module_name}
             div.module-version Vulnerable: #{advisory.vulnerable_versions}
             div.module-version Patched: #{advisory.patched_versions}
 
