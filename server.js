@@ -86,6 +86,14 @@ server.route({
     }
 });
 
+server.route({
+    method: 'GET',
+    path: '/newsletter',
+    handler: {
+        view: 'newsletter'
+    }
+});
+
 
 server.register([
     {
