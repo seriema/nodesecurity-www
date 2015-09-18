@@ -1,5 +1,5 @@
 ---
-title:  ldapauth-fork LDAP Injection
+title:  ldapauth LDAP Injection
 author: David Black, Jerome Touffe-Blin
 module_name: ldapauth
 publish_date: Fri Sept 18 2015 12:30:10 GMT-0700 (PDT)
