@@ -3,7 +3,7 @@ title:  ldapauth-fork LDAP Injection
 author: Jerome Touffe-Blin
 module_name: ldapauth-fork
 publish_date: Fri Sept 18 2015 12:29:10 GMT-0700 (PDT)
-cves: "[]"
+cves: "[{\"name\":\"CVE-2015-7294\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-CVE-2015-7294\"}]"
 vulnerable_versions: "< 2.3.3"
 patched_versions: ">= 2.3.3"
 ...
