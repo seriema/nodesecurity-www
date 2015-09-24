@@ -8,7 +8,7 @@ vulnerable_versions: "<=0.3.0"
 patched_versions: ">=0.3.1"
 ...
 
-## Overview
+## Overview:
 Marked comes with an option to sanitize user output to help protect against content injection attacks.
 
 ```sanitize: true```
@@ -20,7 +20,7 @@ Injection is possible in two locations
 - gfm codeblocks (language)
 - javascript url's
 
-## Recommendations
+## Recommendations:
 
 - Upgrade to version 0.3.1 or later
 

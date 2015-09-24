@@ -2,17 +2,17 @@
 title:  remarkable Content Injection
 author:  Adam Baldwin
 module_name: remarkable
-publish_date: Thu Nov 13 2014 12:33:48 GMT-0800 (PST) 
+publish_date: Thu Nov 13 2014 12:33:48 GMT-0800 (PST)
 cves: "[]"
 vulnerable_versions: "<1.4.1"
 patched_versions: ">=1.4.1"
 ...
 
-## Overview
+## Overview:
 
 Certain input when passed into remarkable will bypass the bad prototcol check that disallows the javascript: scheme allowing for javascript: url's to be injected into the rendered content.
 
-## Example
+### Example
 
 ```
 [link](<javascript:alert(1)>)
@@ -27,9 +27,9 @@ where as
 
 Would be rendered as `[link](javascript:alert(1))` because it's an invalid scheme.
 
-## Recommendations
+## Recommendations:
 
-Upgrade to version 1.4.1 or greater 
+Upgrade to version 1.4.1 or greater
 
-## References
+## References:
 - https://github.com/jonschlinkert/remarkable/issues/97

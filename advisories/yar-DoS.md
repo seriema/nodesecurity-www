@@ -8,11 +8,11 @@ vulnerable_versions: "<2.2.0"
 patched_versions: ">=2.2.0"
 ...
 
-## Overview
+## Overview:
 Yar uses an encrypted cookie for session support, during the hapi request/reply flow if this cookie value is invalid (changed by the end-user), a request object variable is not set. In versions prior 2.2.0, the presence of this variable was not validated prior to use, resulting in an unhandled ReferenceError, which in most cases will crash the process.
 
-## Recommendations
+## Recommendations:
 Update to a version 2.2.0 or greater.
 
-## References
+## References:
 - https://github.com/spumko/yar/issues/34

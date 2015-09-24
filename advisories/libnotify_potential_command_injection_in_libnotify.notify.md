@@ -8,10 +8,10 @@ vulnerable_versions: "<= 1.0.3"
 patched_versions: ">= 1.0.4"
 ...
 
-## Overview
+## Overview:
 Untrusted input passed in the call to libnotify.notify could result in execution of shell commands. Callers may be unaware of this.
 
-## Example
+### Example
 ```
 var libnotify = require('libnotify')
 libnotify.notify('UNTRUSTED INPUT', { title: \"\" }, function () {

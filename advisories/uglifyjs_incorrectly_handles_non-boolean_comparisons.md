@@ -1,5 +1,5 @@
 ---
-title: uglify-js incorrectly handles non-boolean comparisons during minification 
+title: uglify-js incorrectly handles non-boolean comparisons during minification
 author: Tom MacWright
 module_name: uglify-js
 publish_date: Mon Aug 24 2015 12:29:10 GMT-0700 (PDT)
@@ -8,10 +8,11 @@ vulnerable_versions: "<= 2.4.23"
 patched_versions: ">= 2.4.24"
 ...
 
+## Overview:
 [Tom MacWright](https://github.com/mishoo/UglifyJS2/issues/751) discovered that UglifyJS versions 2.4.23 and earlier are affected by a vulnerability which allows a specially crafted Javascript file to have altered functionality after minification. This bug was [demonstrated](https://zyan.scripts.mit.edu/blog/backdooring-js/) by [Yan](https://twitter.com/bcrypt) to allow potentially malicious code to be hidden within secure code, activated by minification.
 
 
-## Details:
+### Details:
 
 In Boolean algebra, DeMorgan's laws describe the relationships between conjunctions ( && ), disjunctions ( || ) and negations ( ! ).
 In Javascript form, they state that:
@@ -55,7 +56,7 @@ function isTokenValid(user) {
         || config.uninitialized             // config isn't initialized
         || config.ignoreTimestamps          // ignore timestamps
         || !getTimeLeft(user.token.expiry)  // > 0 if expiration is in the future
-    ); 
+    );
     return timeLeft > 0
 }
 
@@ -64,7 +65,7 @@ function getTimeLeft(expiry) {
 }
 ```
 
-## Recommendations
+## Recommendations:
 
 Upgrade UglifyJS to version >= 2.4.24.
 

@@ -8,7 +8,7 @@ vulnerable_versions: "<=0.3.3"
 patched_versions: ">=0.3.4"
 ...
 
-## Overview
+## Overview:
 
 Marked 0.3.3 and earlier is vulnerable to regular expression denial of service (ReDoS) when certain types of input are passed in to be parsed.
 
@@ -16,7 +16,7 @@ Marked 0.3.3 and earlier is vulnerable to regular expression denial of service (
 
 Marked's catastrophic backtracking issue for the `em` inline rule has now been patched in 0.3.4.
 
-## Recommendation:
+## Recommendations:
 
 Update to marked v0.3.4 or later.
 

@@ -2,17 +2,17 @@
 title:  codem-transcode potential command injection in ffprobe functionality
 author:  Neal Poole
 module_name: codem-transcode
-publish_date: Jul 07 2013 09:33:48 GMT-0800 (PST) 
+publish_date: Jul 07 2013 09:33:48 GMT-0800 (PST)
 cves: "[{\"name\":\"CVE-2013-7377\",\"link\":\"http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-7377\"}]"
 vulnerable_versions: "<0.5.0"
 patched_versions: ">=0.5.0"
 ...
 
-## Overview
+## Overview:
 
 When the ffprobe functionality is enabled on the server, HTTP POST requests can be made to /probe. These requests are passed to the ffprobe binary on the server. Through this HTTP endpoint it is possible to send a malformed source file name to ffprobe that results in arbitrary command execution.
 
-## Mitigating Factors:
+### Mitigating Factors:
 The ffprobe functionality is not enabled by default. In addition, exploitation opportunities are limited in a standard configuration because the server binds to the local interface by default.
 
 ## Recommendations:
