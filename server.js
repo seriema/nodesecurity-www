@@ -6,96 +6,15 @@ var config = require('config');
 var server = new Hapi.Server(config.hapi.options);
 server.connection({ host: config.hapi.hostname, port: config.hapi.port });
 
-server.views({
-    engines: {
-        jade: require('jade'),
-    },
-    path: './views',
-    isCached: process.env.NODE_ENV==='production'
-});
-
-server.route({
-    method: 'GET',
-    path: '/',
-    handler: {
-        view: 'index'
-    }
-});
-
-server.route({
-    method: 'GET',
-    path: '/{path*}',
-    handler: {
-        directory: { path: './public', listing: false, index: true }
-    }
-});
-
-server.route({
-    method: 'GET',
-    path: '/contribute',
-    handler: {
-        view: 'contribute'
-    }
-});
-
-server.route({
-    method: 'GET',
-    path: '/report',
-    handler: {
-        view: 'report'
-    }
-});
-
-server.route({
-    method: 'GET',
-    path: '/thanks',
-    handler: {
-        view: 'email-success'
-    }
-});
-
-server.route({
-    method: 'GET',
-    path: '/email-error',
-    handler: {
-        view: 'email-error'
-    }
-});
-
-server.route({
-    method: 'GET',
-    path: '/research',
-    handler: {
-        view: 'research'
-    }
-});
-
-server.route({
-    method: 'GET',
-    path: '/resources',
-    handler: {
-        view: 'resources'
-    }
-});
-
-server.route({
-    method: 'GET',
-    path: '/tools',
-    handler: {
-        view: 'tools'
-    }
-});
-
-server.route({
-    method: 'GET',
-    path: '/newsletter',
-    handler: {
-        view: 'newsletter'
-    }
-});
-
-
 server.register([
+    {
+        register: require('vision'),
+        options: null
+    },
+    {
+        register: require('inert'),
+        options: null
+    },
     {
         register: require('./hapi-advisories'),
         options: null
@@ -110,10 +29,99 @@ server.register([
         }
     }
 ], function (err) {
-    if (err) { 
+    if (err) {
         console.log('Failed to load plugin: ' + err);
     } else {
         console.log('Loaded advisories');
+
+        server.views({
+            engines: {
+                jade: require('jade'),
+            },
+            path: './views',
+            isCached: process.env.NODE_ENV==='production'
+        });
+
+        server.route({
+            method: 'GET',
+            path: '/',
+            handler: {
+                view: 'index'
+            }
+        });
+
+        server.route({
+            method: 'GET',
+            path: '/{path*}',
+            handler: {
+                directory: { path: './public', listing: false, index: true }
+            }
+        });
+
+        server.route({
+            method: 'GET',
+            path: '/contribute',
+            handler: {
+                view: 'contribute'
+            }
+        });
+
+        server.route({
+            method: 'GET',
+            path: '/report',
+            handler: {
+                view: 'report'
+            }
+        });
+
+        server.route({
+            method: 'GET',
+            path: '/thanks',
+            handler: {
+                view: 'email-success'
+            }
+        });
+
+        server.route({
+            method: 'GET',
+            path: '/email-error',
+            handler: {
+                view: 'email-error'
+            }
+        });
+
+        server.route({
+            method: 'GET',
+            path: '/research',
+            handler: {
+                view: 'research'
+            }
+        });
+
+        server.route({
+            method: 'GET',
+            path: '/resources',
+            handler: {
+                view: 'resources'
+            }
+        });
+
+        server.route({
+            method: 'GET',
+            path: '/tools',
+            handler: {
+                view: 'tools'
+            }
+        });
+
+        server.route({
+            method: 'GET',
+            path: '/newsletter',
+            handler: {
+                view: 'newsletter'
+            }
+        });
+
         // Start the server
         server.start(function (err) {
             if (err) {

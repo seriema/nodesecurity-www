@@ -13,7 +13,16 @@ var unpatched = require('./data/unpatched.json');
 var semver_test = require('./data/semver_test.json');
 
 exports['register plugin'] = function (test) {
-    server.register({register: advisories, options: {views: '../views'}}, function (err) {
+    server.register([
+        {
+            register: require('vision'),
+            options: {}
+        },
+        {
+            register: advisories,
+            options: {views: '../views'}
+        }
+    ], function (err) {
         test.ifError(err);
         test.done();
     });
